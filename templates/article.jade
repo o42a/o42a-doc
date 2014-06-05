@@ -1,0 +1,31 @@
+mixin navItem(url, text)
+  li(class=env.helpers.navClass(page, url))
+    a(href=env.helpers.htmlUrl(page, url))=text
+
+doctype HTML
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title o42a: #{page.title}
+    link(rel="stylesheet" href=env.helpers.contentUrl(page, "css/bootstrap.min.css"))
+  body
+    header(class="navbar navbar-fixed-top navbar-inverse", role="navigation")
+      div(class="navbar-header")
+        ul(class="nav navbar-nav")
+          li
+            a(href=env.helpers.htmlUrl(page, ''), class="navbar-brand") o42a
+        ul(class="nav navbar-nav")
+          +navItem("docs/intro/features", "Features")
+          +navItem("docs/", "Documentation")
+          +navItem("devel/", "Development")
+          +navItem("downloads", "Downloads")
+          li: a(href="https://bitbucket.org/o42a/o42a/issues?status=new&status=open")
+            | Issues
+    block content
+      div(class="container-fluid")
+        div(class="row")
+          article(class="col-xs-12")
+            !=typogr(page.html).typogrify()
+    script(src=env.helpers.contentUrl(page, "js/angular.min.js"))
+    script(src=env.helpers.contentUrl(page, "js/angular-bootstrap-tpls.min.js"))

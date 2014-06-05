@@ -1,0 +1,16 @@
+{
+  "name": "o42a-doc",
+  "version": "0.2.10",
+  "description": "o42a official site and documentation",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "typogr": "0.5.x"
+  },
+  "repository": "none",
+  "devDependencies": {
+    "grunt": "^0.4.3",
+    "grunt-contrib-less": "^0.10.0",
+    "grunt-contrib-concat": "^0.3.0",
+    "grunt-wintersmith": "0.0.2"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "locals": {
+    "url": "http://localhost:18080",
+    "name": "o42a Programming Language",
+    "owner": "Ruslan Lopatin",
+    "description": "o42a official site and documentation"
+  },
+  "baseUrl": ".",
+  "require": {
+    "typogr": "typogr"
+  },
+  "jade": {
+    "pretty": true
+  },
+  "markdown": {
+    "gfm": true,
+    "tables": true,
+    "breaks": false,
+    "smartLists": true,
+    "smartypants": true
+  },
+  "plugins": [
+    "./plugins/helpers.js"
+  ]
+}
