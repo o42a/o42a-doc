@@ -1,3 +1,8 @@
+---
+title: Documentation
+template: doc.jade
+---
+
 References
 ==========
 <!--
