@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Variables
 template: doc.jade
+order: 2
 ---
 
 Variables

@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Strings
 template: doc.jade
+order: 4
 ---
 
 Strings

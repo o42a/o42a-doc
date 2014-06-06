@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Claim
 template: doc.jade
+order: 3
 ---
 
 Claim

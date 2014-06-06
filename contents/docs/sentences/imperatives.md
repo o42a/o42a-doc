@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Imperative Blocks
 template: doc.jade
+order: 6
 ---
 
 Imperative Blocks

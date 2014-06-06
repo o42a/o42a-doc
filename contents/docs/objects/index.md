@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Objects
 template: doc.jade
+order: 3
 ---
 
 Objects

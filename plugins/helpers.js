@@ -37,6 +37,12 @@ module.exports = function(env, callback) {
   }
   env.helpers.normalizeHtmlUrl = normalizeHtmlUrl;
   env.helpers.contentUrl = contentUrl;
+  env.helpers.relativeUrl = function(page, url) {
+    if (url.charAt(0) == '/' && url.charAt(1) != '/') {
+      return htmlIndexUrl(relativeUrl(page.getUrl('/'), url));
+    }
+    return htmlIndexUrl(relativeUrl(page.getUrl(), url));
+  };
   env.helpers.htmlUrl = function(page, url) {
     return contentUrl(page, normalizeHtmlUrl(url));
   };

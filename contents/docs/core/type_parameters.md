@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Type Parameters
 template: doc.jade
+order: 5
 ---
 
 Type Parameters

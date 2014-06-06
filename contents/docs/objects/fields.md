@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Fields
 template: doc.jade
+order: 4
 ---
 
 Fields

@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Phrase Outcome
 template: doc.jade
+order: 6
 ---
 
 Phrase Outcome

@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Adapters
 template: doc.jade
+order: 5
 ---
 
 Adapters

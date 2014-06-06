@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Binary Operators
 template: doc.jade
+order: 3
 ---
 
 Binary Operators

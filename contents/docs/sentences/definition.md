@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Understanding The Value Definition
 template: doc.jade
+order: 5
 ---
 
 Understanding The Value Definition

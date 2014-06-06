@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Arrays
 template: doc.jade
+order: 3
 ---
 
 Arrays

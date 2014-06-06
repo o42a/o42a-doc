@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Unary Operators
 template: doc.jade
+order: 2
 ---
 
 Unary Operators

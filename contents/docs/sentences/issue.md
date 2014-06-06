@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Issue
 template: doc.jade
+order: 4
 ---
 
 Issue

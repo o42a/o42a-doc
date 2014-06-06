@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Reusing Clauses
 template: doc.jade
+order: 4
 ---
 
 Reusing Clauses

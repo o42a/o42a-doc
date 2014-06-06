@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Field Propagation
 template: doc.jade
+order: 7
 ---
 
 Field Propagation

@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: "o42ac: an o42a Compiler"
 template: doc.jade
+order: 4
 ---
 
 o42ac: an o42a Compiler

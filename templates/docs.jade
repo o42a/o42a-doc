@@ -1,1 +1,19 @@
 extends article
+
+block content
+  div(class="container-fluid")
+    div(class="row")
+      article(class="col-xs-12")
+        !=env.helpers.renderPage(page)
+    div(class="row")
+      article(class="col-xs-12")
+        ul(class="nav nav-pills nav-stacked nav-header")
+          each section in env.helpers.docs.sections(contents)
+            li
+              a(href=env.helpers.relativeUrl(page, section.index.url))
+                | #{section.index.title}
+              ul(class="nav nav-pills nav-stacked nav-nested")
+                each doc in env.helpers.docs.section(section)
+                  li
+                    a(href=env.helpers.relativeUrl(page, doc.url))
+                      | #{doc.title}

@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Numbers
 template: doc.jade
+order: 3
 ---
 
 Numbers

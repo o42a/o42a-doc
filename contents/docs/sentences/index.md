@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Sentences
 template: doc.jade
+order: 5
 ---
 
 Sentences

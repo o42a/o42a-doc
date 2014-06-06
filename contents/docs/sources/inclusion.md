@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: File Inclusion
 template: doc.jade
+order: 3
 ---
 
 File Inclusion

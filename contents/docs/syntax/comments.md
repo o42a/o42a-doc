@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Comments
 template: doc.jade
+order: 1
 ---
 
 Comments

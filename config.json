@@ -20,6 +20,7 @@
     "smartypants": true
   },
   "plugins": [
-    "./plugins/helpers.js"
+    "./plugins/helpers.js",
+    "./plugins/docs.js"
   ]
 }

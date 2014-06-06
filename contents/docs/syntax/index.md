@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Basic Syntax
 template: doc.jade
+order: 2
 ---
 
 Basic Syntax

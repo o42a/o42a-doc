@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Names
 template: doc.jade
+order: 2
 ---
 
 Names
