@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Inheritance vs Propagation
 template: doc.jade
+order: 9
 ---
 
 Inheritance vs Propagation

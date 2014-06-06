@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Proposition
 template: doc.jade
+order: 2
 ---
 
 Proposition

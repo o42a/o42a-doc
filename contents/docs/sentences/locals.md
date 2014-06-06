@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Locals
 template: doc.jade
+order: 7
 ---
 
 Locals

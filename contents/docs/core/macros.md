@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Macros
 template: doc.jade
+order: 4
 ---
 
 Macros

@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Introduction
 template: doc.jade
+order: 1
 ---
 
 Introduction

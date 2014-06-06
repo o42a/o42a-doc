@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Underscore
 template: doc.jade
+order: 5
 ---
 
 Underscore

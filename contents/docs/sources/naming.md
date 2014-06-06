@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Naming Conventions
 template: doc.jade
+order: 2
 ---
 
 Naming Conventions

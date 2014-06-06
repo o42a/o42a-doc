@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Phrase Completeness
 template: doc.jade
+order: 5
 ---
 
 Phrase Completeness

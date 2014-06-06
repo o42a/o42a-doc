@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Value Definition
 template: doc.jade
+order: 3
 ---
 
 Value Definition

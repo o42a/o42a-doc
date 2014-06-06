@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Core Objects
 template: doc.jade
+order: 7
 ---
 
 Core Objects

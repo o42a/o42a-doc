@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Compound Phrase
 template: doc.jade
+order: 3
 ---
 
 Compound Phrase

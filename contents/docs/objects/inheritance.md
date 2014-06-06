@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Inheritance
 template: doc.jade
+order: 6
 ---
 
 Inheritance

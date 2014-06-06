@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: "\"Hello, World!\" Explained"
 template: doc.jade
+order: 2
 ---
 
 "Hello, World!" Explained

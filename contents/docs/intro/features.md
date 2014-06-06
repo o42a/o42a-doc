@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Language Features
 template: doc.jade
+order: 1
 ---
 
 Language Features

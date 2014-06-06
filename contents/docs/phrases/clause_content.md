@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Clause Content
 template: doc.jade
+order: 2
 ---
 
 Clause Content

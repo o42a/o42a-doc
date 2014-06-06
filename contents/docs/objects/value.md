@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Object Value
 template: doc.jade
+order: 2
 ---
 
 Object Value

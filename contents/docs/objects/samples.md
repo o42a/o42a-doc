@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Sample Propagation
 template: doc.jade
+order: 8
 ---
 
 Sample Propagation

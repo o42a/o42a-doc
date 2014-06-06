@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: File Structure
 template: doc.jade
+order: 1
 ---
 
 File Structure

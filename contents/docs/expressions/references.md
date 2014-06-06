@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: References
 template: doc.jade
+order: 1
 ---
 
 References

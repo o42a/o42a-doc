@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Expressions
 template: doc.jade
+order: 4
 ---
 
 Expressions

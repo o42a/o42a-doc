@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Phrases
 template: doc.jade
+order: 6
 ---
 
 Phrases

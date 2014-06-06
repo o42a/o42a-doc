@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Links
 template: doc.jade
+order: 1
 ---
 
 Links

@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Statements
 template: doc.jade
+order: 1
 ---
 
 Statements

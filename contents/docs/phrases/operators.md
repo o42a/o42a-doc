@@ -1,6 +1,7 @@
 ---
-title: Documentation
+title: Operators Override
 template: doc.jade
+order: 7
 ---
 
 Operators Override
