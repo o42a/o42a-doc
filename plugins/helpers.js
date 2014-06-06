@@ -2,9 +2,20 @@ module.exports = function(env, callback) {
   var typogr = require("typogr");
   var URL = require("url");
   var prefix = '/__PAGE__/';
+
+  function htmlIndexUrl(url) {
+    if (url.charAt(url.length - 1) == '/') return url + 'index.html';
+    return url;
+  }
+  function normalizeHtmlUrl(url) {
+    if (!url) return 'index.html';
+    if (url.charAt(url.length - 1) == '/') return url + 'index.html';
+    if (url.substring(url.length - 5) == '.html') return url;
+    return url + '.html';
+  }
   function relativeUrl(base, url) {
-    var baseSteps = base.split('/');
-    var urlSteps = url.split('/');
+    var baseSteps = htmlIndexUrl(base).split('/');
+    var urlSteps = htmlIndexUrl(url).split('/');
     var commonLen = 0;
     while (commonLen < baseSteps.length
       && commonLen < urlSteps.length
@@ -26,15 +37,6 @@ module.exports = function(env, callback) {
     for (var i = 2; i < rootSteps.length; ++i) rootPath += '../';
     return rootPath + url;
   }
-  function normalizeHtmlUrl(url) {
-    if (!url) return 'index.html';
-    if (url.charAt(url.length - 1) == '/') return url + 'index.html';
-    return url + '.html';
-  }
-  function htmlIndexUrl(url) {
-    if (url.charAt(url.length - 1) == '/') return url + 'index.html';
-    return url;
-  }
   env.helpers.normalizeHtmlUrl = normalizeHtmlUrl;
   env.helpers.contentUrl = contentUrl;
   env.helpers.relativeUrl = function(page, url) {
@@ -50,6 +52,11 @@ module.exports = function(env, callback) {
     var u = '/' + url;
     var pageUrl = normalizeHtmlUrl(page.getUrl('/'));
     if (pageUrl.substring(0, u.length) == u) return "active";
+  };
+  env.helpers.navItemClass = function(page, url) {
+    var u = normalizeHtmlUrl('/' + url);
+    var pageUrl = normalizeHtmlUrl(page.getUrl('/'));
+    if (pageUrl == u) return "active";
   };
   env.helpers.renderPage = function(page) {
     // Replace the default links resolution algorithm
