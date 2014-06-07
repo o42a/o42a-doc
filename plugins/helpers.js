@@ -30,20 +30,12 @@ module.exports = function(env, callback) {
     }
     return result;
   }
-  function contentUrl(page, url) {
-    var pageUrl = page.getUrl('/');
-    var rootSteps = pageUrl.split('/');
-    var rootPath = "";
-    for (var i = 2; i < rootSteps.length; ++i) rootPath += '../';
-    return rootPath + url;
-  }
   env.helpers.normalizeHtmlUrl = normalizeHtmlUrl;
-  env.helpers.contentUrl = contentUrl;
   env.helpers.relativeUrl = function(page, url) {
     return htmlIndexUrl(relativeUrl(page.getUrl(), url));
   };
   env.helpers.htmlUrl = function(page, url) {
-    return contentUrl(page, normalizeHtmlUrl(url));
+    return relativeUrl(page.getUrl(), normalizeHtmlUrl(url));
   };
   env.helpers.navClass = function(page, url) {
     var u = '/' + url;
