@@ -40,12 +40,23 @@ module.exports = function(grunt) {
     },
     wintersmith: {
       build: {}
+    },
+    clean: {
+      options: {
+        force: true
+      },
+      temp: [".temp"],
+      built: ["build"]
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-wintersmith');
 
   grunt.registerTask('default', ['less', 'concat', 'wintersmith']);
+  grunt.registerTask(
+    'build',
+    ['less:production', 'concat:production', 'wintersmith']);
 };
