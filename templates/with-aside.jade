@@ -1,10 +1,8 @@
 extends article
 
 block content
-  div(class="container-fluid")
-    div(class="row")
-      article(class="col-md-9")
-        block article
-          !=env.helpers.renderPage(page)
-      aside(class="col-md-3")
-        block aside
+  article(class="col-md-9")
+    block article
+      !=env.helpers.renderPage(page)
+  aside(class="col-md-3")
+    block aside

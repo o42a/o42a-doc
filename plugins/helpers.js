@@ -78,5 +78,20 @@ module.exports = function(env, callback) {
     URL.resolve = resolve;
     return html;
   };
+  env.helpers.breadcrumbs = function(page) {
+    var result = [];
+    var p = page;
+    for (;;) {
+      var parent = p.parent;
+      if (!parent) break;
+      if (parent.index && parent.index.url == p.url) {
+        p = parent;
+        continue;
+      }
+      p = parent;
+      result.splice(0, 0, p);
+    }
+    return result.length ? result : null;
+  };
   callback();
 };
