@@ -1,1 +1,15 @@
-extends article
+extends with-aside
+
+mixin navItem(url, title)
+  li(class=env.helpers.navItemClass(page, url))
+    a(href=env.helpers.relativeUrl(page, url))
+      | #{title}
+
+block aside
+  ul(class="nav nav-pills nav-stacked")
+    +navItem('devel/mission.html', 'Mission Statement')
+    +navItem('devel/index.html', 'Development Status')
+    li: a(href="../releases/index.html")
+      | Releases
+    li: a(href="https://bitbucket.org/o42a/o42a/issues?status=new&status=open")
+      | Issue Tracker
