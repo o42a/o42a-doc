@@ -26,6 +26,7 @@ html(lang="en")
       div(class="container-fluid")
         div(class="row")
           article(class="col-xs-12")
-            !=env.helpers.renderPage(page)
+            block article
+              !=env.helpers.renderPage(page)
     script(src=env.helpers.contentUrl(page, "js/angular.min.js"))
     script(src=env.helpers.contentUrl(page, "js/angular-bootstrap-tpls.min.js"))

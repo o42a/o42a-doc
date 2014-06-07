@@ -1,1 +1,6 @@
 extends article
+
+block article
+  !=env.helpers.renderPage(page)
+  div(class="well")
+    include release-list
