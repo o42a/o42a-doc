@@ -89,7 +89,10 @@ module.exports = function(env, callback) {
         continue;
       }
       p = parent;
-      result.splice(0, 0, p);
+      result.splice(0, 0, {
+        url: this.relativeUrl(page, p.index.url),
+        title: p.index.url == 'index.html' ? "o42a" : p.index.title
+      });
     }
     return result.length ? result : null;
   };
