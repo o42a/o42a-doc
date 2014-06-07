@@ -20,7 +20,8 @@
     "smartypants": true
   },
   "plugins": [
+    "./plugins/docs.js",
     "./plugins/helpers.js",
-    "./plugins/docs.js"
+    "./plugins/news.js"
   ]
 }

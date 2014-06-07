@@ -1,0 +1,29 @@
+extends article
+
+include news
+
+mixin pager(news)
+  if news.hasMore || news.offset
+    ul(class="pager")
+      if news.hasMore
+        li(class="previous")
+          a(href=env.helpers.relativeUrl(
+              page,
+              "news/news-" + (env.helpers.pageNumber(page) + 1) + ".html"))
+            span(class="glyphicon glyphicon-arrow-left")
+            |&nbsp;Older
+      if news.offset
+        li(class="next")
+          a(href=env.helpers.relativeUrl(
+              page,
+          "news/news-" + (env.helpers.pageNumber(page) - 1) + ".html"))
+            |Newer&nbsp;
+            span(class="glyphicon glyphicon-arrow-right")
+
+block article
+  h1 News Archive
+  -var news = env.helpers.news(contents, page.metadata.offset, 10)
+  +pager(news)
+  each article in news.articles
+    +newsArticle(article)
+  +pager(news)

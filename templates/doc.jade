@@ -1,14 +1,15 @@
 extends with-aside
 
 block aside
-  ul(class="nav nav-pills nav-stacked nav-header")
-    each section in env.helpers.docs.sections(contents)
-      li(class=env.helpers.navItemClass(page, section.index.url))
-        a(href=env.helpers.relativeUrl(page, section.index.url))
-          | #{section.index.title}
-        if section.filename == page.parent.filename
-          ul(class="nav nav-pills nav-stacked nav-nested")
-            each doc in env.helpers.docs.section(section)
-              li(class=env.helpers.navItemClass(page, doc.url))
-                a(href=env.helpers.relativeUrl(page, doc.url))
-                  | #{doc.title}
+  div(class="well")
+    ul(class="nav nav-pills nav-stacked nav-header")
+      each section in env.helpers.docs.sections(contents)
+        li(class=env.helpers.navItemClass(page, section.index.url))
+          a(href=env.helpers.relativeUrl(page, section.index.url))
+            | #{section.index.title}
+          if section.filename == page.parent.filename
+            ul(class="nav nav-pills nav-stacked nav-nested")
+              each doc in env.helpers.docs.section(section)
+                li(class=env.helpers.navItemClass(page, doc.url))
+                  a(href=env.helpers.relativeUrl(page, doc.url))
+                    | #{doc.title}

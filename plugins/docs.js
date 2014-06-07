@@ -19,7 +19,7 @@ module.exports = function(env, callback) {
           return 1;
         }
         var aName = a.index.filename;
-        var bName = a.index.filename;
+        var bName = b.index.filename;
         if (aName > bName) return 1;
         if (aName < bName) return -1;
         return 0;
@@ -44,7 +44,7 @@ module.exports = function(env, callback) {
           return 1;
         }
         var aName = a.filename;
-        var bName = a.filename;
+        var bName = b.filename;
         if (aName > bName) return 1;
         if (aName < bName) return -1;
         return 0;
