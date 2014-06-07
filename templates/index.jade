@@ -3,17 +3,15 @@ extends article
 include news
 
 block content
-  div(class="container-fluid")
-    div(class="row")
-      article(class="col-md-8")
-        !=env.helpers.renderPage(page)
-      aside(class="col-md-4")
-        -var news = env.helpers.news(contents, 0, 3);
-        each article in news.articles
-          +newsArticle(article)
-        if news.hasMore
-          ul(class="pager")
-            li(class="previous")
-              a(href=env.helpers.relativeUrl(page, "news/news-1.html"))
-                span(class="glyphicon glyphicon-arrow-left")
-                |&nbsp;News Archive
+  article(class="col-md-8")
+    !=env.helpers.renderPage(page)
+  aside(class="col-md-4")
+    -var news = env.helpers.news(contents, 0, 3);
+    each article in news.articles
+      +newsArticle(article)
+    if news.hasMore
+      ul(class="pager")
+        li(class="previous")
+          a(href=env.helpers.relativeUrl(page, "news/news-1.html"))
+            span(class="glyphicon glyphicon-arrow-left")
+            |&nbsp;News Archive

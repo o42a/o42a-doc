@@ -22,9 +22,19 @@ html(lang="en")
           +navItem("downloads", "Downloads")
           li: a(href="https://bitbucket.org/o42a/o42a/issues?status=new&status=open")
             | Issues
-    block content
-      div(class="container-fluid")
-        div(class="row")
+    div(class="container-fluid")
+      div(class="row")
+        -var breadcrumbs = env.helpers.breadcrumbs(page);
+        if breadcrumbs
+          ol(class="breadcrumb visible-md visible-lg")
+            each parent in breadcrumbs
+              li: a(href=env.helpers.relativeUrl(page, parent.index.url))
+                | #{parent.index.title}
+            li(class="active")=page.title
+        if !breadcrumbs
+          span(class="visible-md visible-lg") &nbsp;
+      div(class="row")
+        block content
           article(class="col-xs-12")
             block article
               !=env.helpers.renderPage(page)
