@@ -1,6 +1,6 @@
 ---
 title: About
-template: article.jade
+template: index.jade
 ---
 
 About

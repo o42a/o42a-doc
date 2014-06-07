@@ -1,0 +1,20 @@
+mixin newsArticle(article)
+  div(class="panel panel-primary")
+    div(class="panel-heading")
+      | <small>#{article.metadata.published}</small> #{article.title}
+    div(class="panel-body")
+      !=env.helpers.renderPage(article)
+    -var release = article.metadata.release
+    if release
+      div(class="panel-footer text-right")
+        div(class="btn-group")
+          a(
+              class="btn btn-default",
+              href=env.helpers.relativeUrl(
+              page,
+              "releases/" + release + ".html"))
+            | Release Notes
+          a(
+              class="btn btn-default",
+              href=env.helpers.relativeUrl(page, "downloads.html"))
+            | Download
