@@ -1,0 +1,33 @@
+mixin release(release)
+  -var url = "releases/" + release + ".html";
+  li(class=env.helpers.navItemClass(page, url))
+    a(href=env.helpers.relativeUrl(page, url))
+      | #{release}
+
+ul(class="nav nav-pills nav-stacked")
+  +release('0.2.8')
+ul(class="nav bav-pills nav-stacked nav-header")
+  li: a(class="text-muted")
+    | Older Releases
+  ul(class="nav nav-pills nav-stacked nav-nested")
+    +release('0.2.7')
+    +release('0.2.6')
+    +release('0.2.5')
+    +release('0.2.4')
+    +release('0.2.3')
+    +release('0.2.2')
+    +release('0.2.1')
+    +release('0.2.0')
+ul(class="nav bav-pills nav-stacked nav-header")
+  li: a(class="text-muted")
+    | 0.1.x Releases
+  ul(class="nav nav-pills nav-stacked nav-nested")
+    +release('0.1.8')
+    +release('0.1.7')
+    +release('0.1.6')
+    +release('0.1.5')
+    +release('0.1.4')
+    +release('0.1.3')
+    +release('0.1.2')
+    +release('0.1.1')
+    +release('0.1.0')
