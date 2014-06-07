@@ -30,7 +30,7 @@ For that, type the following command in console:
 Or follow to the [source](http://bitbucket.org/o42a/o42a/src) section
 at Bitbucket.
 
-Information about releases can be found [here](../releases/index.html).
+Information about releases can be found [here](/releases/index.html).
 
 
 Installation
