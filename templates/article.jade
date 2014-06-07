@@ -28,8 +28,7 @@ html(lang="en")
         if breadcrumbs
           ol(class="breadcrumb visible-md visible-lg")
             each parent in breadcrumbs
-              li: a(href=env.helpers.relativeUrl(page, parent.index.url))
-                | #{parent.index.title}
+              li: a(href=parent.url)=parent.title
             li(class="active")=page.title
         if !breadcrumbs
           span(class="visible-md visible-lg") &nbsp;
@@ -40,3 +39,7 @@ html(lang="en")
               !=env.helpers.renderPage(page)
     script(src=env.helpers.contentUrl(page, "js/angular.min.js"))
     script(src=env.helpers.contentUrl(page, "js/angular-bootstrap-tpls.min.js"))
+    footer(class="footer")
+      p Powered by&nbsp;
+        a(href="http://wintersmith.io") Wintersmith
+      p: a(href=env.helpers.relativeUrl(page, "imprint.html")) Imprint
