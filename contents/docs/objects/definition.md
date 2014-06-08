@@ -25,8 +25,8 @@ Value Evaluation
 
 An object value is evaluated on each request, unless it has a stateful type like
 [variable](../core/variables.html) or mutable [array](../core/arrays.html)
-(not row). A client code may request the value evaluation to happen at most once
-with a [keep value](../expressions/unary.html#keep-value) operator.
+(not row). A client code may request the value evaluation to happen only once
+with [eager reference](../expressions/references.html#eager-reference).
 
 The definition is evaluated in the scope of the object. So the same definition
 can evaluate to different value in another (derived) object:

@@ -20,7 +20,7 @@ Locals are named expressions existing during the value evaluation only.
 
 A local can be declared similarly to a field:
 
-> `'$' <name> ':=' <definition>`
+> `'$' <name> {':='|'='} <definition>`
 
 where:
 
@@ -28,9 +28,7 @@ where:
 * `<definition>` is an arbitrary expression, [link](../core/links.html), or
 [variable](../core/variables.html) declaration.
 
-The **`$`** prefix can be omitted when the local is declared inside an
-[imperative block](imperatives.html). This won't lead to confusion with field
-declarations, as imperative blocks may not declare fields.
+The `:=` and `=` signs can be used interchangeably and mean the same.
 
 Unlike fields, the locals can be declared anywhere in the sentence. Even inside
 [issues](issue.html).
@@ -38,7 +36,7 @@ Unlike fields, the locals can be declared anywhere in the sentence. Even inside
 A local declaration is a statement, which may fail. If this happens, the value
 evaluation aborts and results to false.
 
-A local declaration is executed once. The local then stores an expression
+A local declaration is executed once. The local then stores the expression
 evaluation result. This result can be used many times without expression
 re-evaluation.
 
@@ -50,54 +48,54 @@ A local can be accessed by name, just like any field. However, the local may
 have the same name as some field. To avoid confusion a local scope reference
 (**`$`**) may be used to require a local access explicitly:
 ```o42a
-$Local := 1
+$Local = 1
 = $Local + local ~~ Both operands access the same local.
-                 ~~ But the right one does it explicitly.
+                 ~~ But the left one does it explicitly.
 ```
 
 Because locals exist only during the object value evaluation, they can not be
 accessed by object fields.
 
 Also, the local can be accessed only after its declaration. The following rules
-apply to the local visibility:
+apply to the locals visibility:
 
-* The local is not visible outside the block it is declared in:
+* A local is not visible outside the block it is declared in:
 ```o42a
-($Local := 1)
+($Local = 1)
 = $Local + 1 ~~ Error. The local is not visible outside the block.
 ```
-* The local is declared as a [requirement](statements.html#requirements) is
+* A local declared as a [requirement](statements.html#requirements) is
   visible by dependent statements:
 ```o42a
 $Local = 1, = $local + 1
 ```
-* The local declared inside an [alternative](statements.html#alternatives)
+* A local declared inside an [alternative](statements.html#alternatives)
   is not visible outside this alternative, unless this alternative is the only
   one of the sentence:
 ```o42a
-$Local := 1;
+$Local = 1;
 $Local + 1 ~~ Error. The local is not visible in another alternative.
 ```
-* The local declared inside a [proposition](proposition.html) or
+* A local declared inside a [proposition](proposition.html) or
   [claim](claim.html) with only one [alternative](statements.html#alternatives)
   is visible in subsequent sentences:
 ```o42a
 $Local = 1, $local > 0.
 = $Local - 1 ~~ Correct.
 ```
-* The local declared inside an [issue](issue.html) with only one
+* A local declared inside an [issue](issue.html) with only one
   [alternative](statements.html#alternatives) is visible in the following
   sentence, but not in the one next to it:
 ```o42a
-$Local := 1, $local > 0? = $Local - 1 ~~ Correct.
+$Local = 1, $local > 0? = $Local - 1 ~~ Correct.
 = $Local                              ~~ Error.
 ```
 
 Note that in contrast to enclosing object's fields, the objects created during
-the value evaluation has full access to locals:
+the value evaluation have full access to locals:
 ```o42a
-$Left := 1
-$Right := 2
+$Left = 1
+$Right = 2
 = Integers: add (
   ~~ The same as `$Left + $right`.
   Left operand = $left
@@ -159,7 +157,7 @@ becomes the same as the local's name. Here is an example of a local scope loop:
 ``3 $ i { ~~ `I` is a variable loop counter,
           ~~ and a block name.
   Print [i] '/3' nl
-  $I > 1? I = i - 1 ... i ~~ Decrease and repeat `i` while it is more than one. 
+  $I > 1? I -<< 1... i ~~ Decrease and repeat `i` while it is more than one. 
 }
 ```
 
@@ -171,7 +169,7 @@ loop above can be shortened:
 ```o42a
 ``3 $ { ~~ Anonymous loop counter,
   Print [$] '/3' nl
-  $ > 1? $ = $ - 1 ... ~~ Decrease and repeat `$` while it is more than one. 
+  $ > 1? $ -<< 1... ~~ Decrease and repeat `$` while it is more than one. 
 }
 ```
 

@@ -96,15 +96,15 @@ apply it:
       [upgraded](../objects/propagation.html#ancestor-upgrade);
     * all of these restrictions apply to the nested fields.
 
-The link target is evaluated on each access. A
-[keep value](../expressions/unary.html#keep-value) operator can be used to
-evaluate it once.
+The link target is evaluated on each access. An
+[eager evaluation](../expressions/references.html#eager-reference) can be used
+to evaluate it only once.
 
 
 Link Propagation
 ----------------
 
-As any other field, a one link is [propagated](/docs/objects/propagation.html)
+As any other field, a link one is [propagated](../objects/propagation.html)
 to the derived object.
 
 The link's interface and target are expressions, so their evaluation in the
@@ -124,25 +124,6 @@ B := a (
 
 the `b: bar` link target and interface are `b: foo`, so the `b: bar: baz`
 reference is valid and results to a `"baz"` string.
-
-> A link propagation may lead to a conflict:
->
->     :::o42a
->     A := void (
->       Link := integer` link = 1
->     )
->     B1 := a (
->       Foo := 1
->       Link = `foo
->     )
->     B2 := a (
->       Bar := 2
->       Link = `bar
->     )
->     C := a & b1 & b2 ~~ **Conflict**: `c: link` interface should be derived
->                      ~~ from both `foo` and `bar`, which are not compatible.
-> Such conflicts should be resolved manually, by explicit
-> [link override](#link-override).
 
 
 Link Override
@@ -214,8 +195,8 @@ by dereferencing the link when necessary:
   corresponding to the first phrase part is first searched for in the link
   object itself, and if not found - in the link target.
 
-The link can be created with an object
-[constructor expression](/docs/objects/creation.html#constructor-expression).
+A link can be created with an object
+[constructor expression](../objects/creation.html#constructor-expression).
 The link interface can be specified as type argument:
 ```o42a
 Lnk := integer` link (
@@ -242,7 +223,7 @@ String` link (            ~~ Canonical form
 
 ### Link Dereference ###
 
-As mentioned above, the link is automatically dereferenced when required. But
+As mentioned above, a link is automatically dereferenced when required. But
 this can be done explicitly, with a link dereference expression:
 
 > `<link> '->'`
@@ -265,7 +246,7 @@ Link array [1]->-> ~~ Refers the target string of the second element's link
 Adapter Links
 -------------
 
-Any [adapter](/docs/objects/adapters.html) can be declared as link. In contrast
+Any [adapter](../objects/adapters.html) can be declared as link. In contrast
 to plain adapter object, the adapter link object does not derive the
 adapter's identifier. Instead, it is required that the link interface to be
 derived from the adapter's interface. The link target will be used as an adapter
@@ -319,8 +300,8 @@ Custom Assignment
 -----------------
 
 New values can be assigned only to [variables](variables.html#assignment).
-But the assignment statement can be applied to a link also. Such statements
-interpreted as [phrases](/docs/phrases/index.html).
+But assignment statement can be applied to a link also. Such statements
+interpreted as [phrases](../phrases/index.html).
 
 The assignment clause can be declared similarly to the
 [binary operators](../phrases/operators.html#binary-operators) override. The
@@ -338,9 +319,7 @@ Property := integer` link (
     Value setter.
     ~~~
 
-    {
-      Value = new value
-    }
+    Value <- new value
   )
 
   <*Set> Set (
