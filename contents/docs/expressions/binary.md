@@ -27,7 +27,7 @@ The following binary operators supported:
 | `+` |              |              | **Addition**. Returns the sum of numeric operands. Can be [overridden][].
 | `-` | `−` (U+2212) |              | **Subtraction**. Returns the difference of numeric operands. Can be [overridden][].
 
-[overridden]: ../phrases/operators.html#binary_operators
+[overridden]: ../phrases/operators.html#binary-operators
 
 ---------------------
 
@@ -41,13 +41,13 @@ The following binary operators supported:
 | `<`   |              | **Less than**. Returns `true` if the left operand is less than the right one, or `false` otherwise. Can be customized together with `<=>` operator.
 | `<=`  | `≤` (U+2264) | **Less than or equal to**. Returns `true` if the left operand is less than or equal to the right one, or `false` otherwise. Can be customized together with `<=>` operator.
 
-[customized]: ../phrases/operators.html#comparison_operators
+[customized]: ../phrases/operators.html#comparison-operators
 
 ---------------------
 
 |     | Special Operator
 |-----|------------------
-| `~` | **Suffix**. A special operator capable of representing things such as quantities, like `3~minutes`. Can be [customized](../phrases/operators.html#suffix_operator).
+| `~` | **Suffix**. A special operator capable of representing things such as quantities, like `3~minutes`. Can be [customized](../phrases/operators.html#suffix-operator).
 
 ---------------------
 

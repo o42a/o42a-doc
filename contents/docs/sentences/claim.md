@@ -27,7 +27,7 @@ constant value:
 = 2!
 ```
 
-If the [declarative block](statements.html#declarative_block) appears within a
+If the [declarative block](statements.html#declarative-block) appears within a
 claim, the sentences within this block are claims also, even if terminated with
 _period_ (`.`):
 

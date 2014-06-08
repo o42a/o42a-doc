@@ -19,7 +19,7 @@ Free Documentation License".
 It is important to understand the difference between ancestor
 [inheritance](inheritance.html) and sample (either [field](propagation.html),
 [explicit object](samples.html) or
-[adapter interface](adapters.html#adapters_are_fields)) propagation. While the
+[adapter interface](adapters.html#adapters-are-fields)) propagation. While the
 ancestor is an __expression__, the sample is always a __static object__.
 
 

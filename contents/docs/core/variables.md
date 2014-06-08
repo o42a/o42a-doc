@@ -21,7 +21,7 @@ A variable is a link, which target can be re-assigned at run time.
 The variable can be constructed with a variable unary operator:
 > ``` '``' <initializer>```
 
-, by utilizing [type arguments](type_parameters.html#type_arguments):
+, by utilizing [type arguments](type_parameters.html#type-arguments):
 
 > ``<interface> '`' 'variable' '[=' <initializer> ']'``
 
@@ -32,13 +32,13 @@ or, when declaring a variable field:
 where:
 
 * `<field>` is a left part of either
-  [field](/docs/objects/fields.html#field_declaration) or
-  [adapter](/docs/objects/adapters.html#adapter_declaration) declaration;
+  [field](/docs/objects/fields.html#field-declaration) or
+  [adapter](/docs/objects/adapters.html#adapter-declaration) declaration;
 * `<initializer>` is initial variable value, which will be assigned to
-  variable at first access, unless new target [assigned](#variable_assignment)
+  variable at first access, unless new target [assigned](#variable-assignment)
   first;
 * `<interface>` is a variable interface reference, similarly to the
-  [link interface](links.html#link_interface).
+  [link interface](links.html#link-interface).
 
 Variables are used mostly the same way as links.
 
@@ -69,7 +69,7 @@ assignment requires a special syntax, as otherwise it conflicts with a field
 override syntax.
 
 The assignment syntax acceptable for both imperative and declarative code is
-based on a [local scope](../sentences/locals.html#local_scope) declaration
+based on a [local scope](../sentences/locals.html#local-scope) declaration
 syntax:
 
 > `<target> '$' [<local name>] {'=' | '<-'} <value>`
@@ -130,7 +130,7 @@ So, if replace the binding (`<-`) in the code above with the value assignment
 (`=`), the loop will work as expected, without additional overhead and without
 boilerplate.
 
-[keep value]: ../expressions/unary.html#keep_value
+[keep value]: ../expressions/unary.html#keep-value
 
 
 ### Combined Assignment ###
@@ -152,4 +152,4 @@ Variable Object
 ---------------
 
 Every variable is an object inherited from the `Variable` prototype and can be
-used similarly to the [link one](links.html#link_object).
+used similarly to the [link one](links.html#link-object).

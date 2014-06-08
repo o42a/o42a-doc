@@ -22,7 +22,7 @@ manner, which may be called truly intuitive, because it is close to the natural
 text.
 
 Sentences form an object definition within a
-[constructor expression](../objects/creation.html#constructor_expression), or
+[constructor expression](../objects/creation.html#constructor-expression), or
 within parentheses in phrase.
 
 The sentence is a sequence of zero or more statements, delimited by

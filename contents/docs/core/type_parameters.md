@@ -24,7 +24,7 @@ A type parameter value can be specified (overridden) when inheriting an object,
 which has a type parameter.
 
 For example, a [link](links.html) object has a type parameter called `interface`
-representing a [link interface](links.html#link_interface). It can be specified
+representing a [link interface](links.html#link-interface). It can be specified
 like this:
 ```o42a
 Integer link :=> integer` link
@@ -40,7 +40,7 @@ phrase or object construction expression. The syntax is:
 
 where `<type definition>` consists of a sentences containing type parameters
 declarations in the form similar to
-[field declarations](../objects/fields.html#field_declaration):
+[field declarations](../objects/fields.html#field-declaration):
 
 > `<name> [ ['@' ['('] <ascendant> [')'] ] | ':' ] '=' <type>`
 
@@ -50,7 +50,7 @@ where:
 * `<ascendant>` is a reference to an object's ascendant, the overridden type
    parameter is present in;
 * `<type>` is a reference to an object, used as initial value; can be a
-  [macro expansion](macros.html#macro_expansion).
+  [macro expansion](macros.html#macro-expansion).
 
 Each of such declarations declares a new type parameter or overrides an existing
 one, and provides the initial value for it.
@@ -58,7 +58,7 @@ one, and provides the initial value for it.
 **The order of type parameters declaration is significant.**
 
 > See also how the type definition is
-> [declared](../sources/file.html#type_definition) in a standalone file.
+> [declared](../sources/file.html#type-definition) in a standalone file.
 
 
 Type Parameters Usage
@@ -74,7 +74,7 @@ There are differences though:
   object.
 * The type parameter can not be overridden outside of the type definition.
 * Type parameters can be passed to the newly constructed object with a 
-  [type arguments][#type_arguments] expression.
+  [type arguments][#type-arguments] expression.
 * Type parameters can be specified either as type arguments, or inside a type
   definition, but not both.
 
@@ -97,10 +97,10 @@ where:
         * [macro expanding expressions][macro expansion],
 * `<type>` is one of:
     * [reference][],
-    * [ascendants expression](../objects/samples.html#ascendants_expression).
+    * [ascendants expression](../objects/samples.html#ascendants-expression).
 
 [reference]:       ../expressions/references.html
-[macro expansion]: macros.html#macro_expansion
+[macro expansion]: macros.html#macro-expansion
 
 
 Type arguments are substituted as type parameter values in the order of

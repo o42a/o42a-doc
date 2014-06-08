@@ -23,7 +23,7 @@ Identifiers of fields declared within the same object should be unique, but
 object __may__ declare a new field with the same identifier as a field of
 ascendant. In the latter case, two __different__ fields with the same identifier
 will co-exist in the object. See the
-[naming conflicts resolution](#naming_conflicts_resolution) section below.
+[naming conflicts resolution](#naming-conflicts-resolution) section below.
 
 
 Field Declaration

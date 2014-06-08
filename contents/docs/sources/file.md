@@ -35,8 +35,8 @@ optionally preceded by the field declaration.
 
 A field declaration in the title can declare or override any field including
 adapter, link, or variable. The field definition in title can only contain
-ancestor reference, [ascendants](../objects/samples.html#ascendants_expression),
-or [type arguments](../core/type_parameters.html#type_arguments). It should not
+ancestor reference, [ascendants](../objects/samples.html#ascendants-expression),
+or [type arguments](../core/type_parameters.html#type-arguments). It should not
 contain any other expressions, because an actual field definition is the rest of
 the file.
 

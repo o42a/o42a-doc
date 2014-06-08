@@ -37,7 +37,7 @@ There is also a special, shorter syntax for macro declaration:
 where:
 
 * `<field>` is a left part of macro
-  [field](/docs/objects/fields.html#field_declaration) declaration;
+  [field](/docs/objects/fields.html#field-declaration) declaration;
 * `<definition>` is an expression, which can be either:
     * an expression resolved to another macro, in which case the value will be
       copied to declared one, or
@@ -127,7 +127,7 @@ The o42a standard library contains a `Macros` module. This module contains
 standard macros, which may be very helpful. To access and expand standard macro
 a special [scope reference](../expressions/references.html#scope-references)
 (**`##`**) can be used. The rules of
-[macro expansion](#macro_expansion) works for standard macro expansion too:
+[macro expansion](#macro-expansion) works for standard macro expansion too:
 ```o42a
 Comparison :=> void (
   What :=< void` link

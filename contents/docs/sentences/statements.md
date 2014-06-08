@@ -23,7 +23,7 @@ A statement can be one of:
 * a member declaration,
 * a [local declaration](locals.html),
 * a [assignment](../core/variables.html#assignment),
-* a [declarative block](#declarative_block), or
+* a [declarative block](#declarative-block), or
 * an [imperative block](imperatives.html).
 
 When expression results to a directive, then this directive is executed at
@@ -46,7 +46,7 @@ A declarative block is a group of sentences enclosed into parentheses:
 #
 
 Each statement, except the member declaration, has a
-[logical value](../objects/value.html#logical_value). It is possible to
+[logical value](../objects/value.html#logical-value). It is possible to
 logically combine the statements, separating them with:
 
 * a colon (**`,`**) to declare the first statement is a

@@ -63,7 +63,7 @@ Bar row := bar` foo row (= [bar (Int = 1, Str = "One")])
 ~~ Inherit the `foo row` and upgrade elements type to `bar`.
 ```
 
-[constructor expression]: ../objects/creation.html#constructor_expression
+[constructor expression]: ../objects/creation.html#constructor-expression
 
 Also the `Row` and `Array` objects declare phrases, which can be used to
  construct arrays:
@@ -112,7 +112,7 @@ Array Value Definition
 Array object's value can be defined just as any other one, with a
 [self-assignment](/docs/objects/definition.html#self-assignment) statement.
 
-`Row` and `Array` has different [value types](../objects/value.html#value_type),
+`Row` and `Array` has different [value types](../objects/value.html#value-type),
 but they can be converted from one to another:
 ```o42a
 Var-array := integer` array ( ~~ Declare the (mutable) array of integers.

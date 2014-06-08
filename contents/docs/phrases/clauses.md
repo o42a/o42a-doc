@@ -25,7 +25,7 @@ Clause declaration syntax is:
 
 where
 
-* `<id>` is a [clause identifier](#clause_identifier);
+* `<id>` is a [clause identifier](#clause-identifier);
 * `<outcome>` is a [reference](/docs/expressions/references.html) to 
   [phrase outcome](outcome.html);
 * `<reused>` is a [reference](/docs/expressions/references.html) to another
@@ -122,7 +122,7 @@ Single-Quoted String
 --------------------
 
 In contrast to a string, a clause corresponding to the
-[single-quoted string](index.html#single-quoted_string) is interpreted
+[single-quoted string](index.html#single-quoted-string) is interpreted
 independently and recognized by single quotes (**`''`**) identifier.
 
 So, the clause declaration would look like this:
@@ -190,7 +190,7 @@ Phrase (
 Array Constructor
 -----------------
 
-When an [array constructor](../core/arrays.html#array_constructor) is present in
+When an [array constructor](../core/arrays.html#array-constructor) is present in
 the phrase, the corresponding clause is identified by array constructor
 (**`[[]]`**) identifier.
 
@@ -214,7 +214,7 @@ Array [[1, 2]]
 Array (= [1, 2]) ~~ Canonical form of the above.
 ```
 
-> Note that [array constructor](../core/arrays.html#array_constructor)
+> Note that [array constructor](../core/arrays.html#array-constructor)
 > expression should be placed inside an extra pair of square brackets. Otherwise
 > it will be treated as one or more [arguments](#argument).
 
@@ -231,7 +231,7 @@ intervals like `[a..)`, `(a..b)`, or `[a..b]`.
 
 A fully bounded interval, i.e. the one with both bounds specified, requires two
 clauses to be declared: one for the left bound, and another for the right one.
-The second clause should be either [nested](compound.html#nested_clauses), or
+The second clause should be either [nested](compound.html#nested-clauses), or
 should be [reused](reuse.html) by the first one. Identifiers of these clauses
 correspond to the clause open/closed kind. An asterisk or clause name should be
 placed to corresponding bound. The other bound should be omitted.
@@ -331,11 +331,11 @@ A clause name can also be specified:
 Declarative Block
 -----------------
 
-The [declarative block](../sentences/statements.html#declarative_block) can
+The [declarative block](../sentences/statements.html#declarative-block) can
 present anywhere in the phrase. It is always recognized internally and does not
 require a clause for it to be declared. The contents of the declarative block
 are just appended to the same context as a preceding phrase part.
 
 So, the
-[constructor expression](../objects/creation.html#constructor_expression)
+[constructor expression](../objects/creation.html#constructor-expression)
 is just a form of phrase.

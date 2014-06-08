@@ -46,7 +46,7 @@ where:
   to it's ancestor.
 
 Other tokens interpreted similarly to the
-[field declaration](fields.html#field_declaration).
+[field declaration](fields.html#field-declaration).
 
 Note that the adapter can not be declared as prototype. So, the `=>` and `=<>`
 tokens are prohibited in adapter declarations.
@@ -91,7 +91,7 @@ Object: foo @adapter    ~~ Field `foo` of adapter to `adapter` of `object`.
 (Object @@adapter): foo ~~ The same as above, but using ugly parentheses.
 ```
 
-Similarly, a qualified form of [adapter access](#adapter_access) can access an
+Similarly, a qualified form of [adapter access](#adapter-access) can access an
 adapter within adapter.
 
 > Note, that the qualified field access has a precedence over adapter's field
@@ -122,7 +122,7 @@ foo @@container: type @foo ascendant
 ```
 
 An identification conflicts are resolved similarly to the
-[fields](fields.html#naming_conflicts_resolution).
+[fields](fields.html#naming-conflicts-resolution).
 
 
 Adapters are Fields
@@ -142,7 +142,7 @@ Type := 1
 ```
 
 or as a placeholder in
-[#constructor expression](creation.html#constructor_expression):
+[#constructor expression](creation.html#constructor-expression):
 ```o42a
 Type := void (
   Foo := 2

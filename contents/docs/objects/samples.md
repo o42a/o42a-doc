@@ -34,14 +34,14 @@ where:
 * `<sample>` is a sample object reference. 
 
 If ampersand appears before `<ancestor>`, then ancestor is
-[static](inheritance_vs_propagation.html#static_ancestor).
+[static](inheritance_vs_propagation.html#static-ancestor).
 
 Object ancestor should be the same as, or derived from, each of the samples`
 ancestors.
 
 
 This expression can be used in
-[constructor expression](creation.html#constructor_expression) like this:
+[constructor expression](creation.html#constructor-expression) like this:
 ```o42a
 Ancestor & sample 1 & sample 2 (
   foo @ancestor = "foo"
