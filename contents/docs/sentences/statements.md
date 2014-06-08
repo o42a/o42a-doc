@@ -7,7 +7,7 @@ order: 1
 Statements
 ==========
 <!--
-Copyright (C) 2010-2013 Ruslan Lopatin.
+Copyright (C) 2010-2014 Ruslan Lopatin.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -18,8 +18,8 @@ Free Documentation License".
 
 A statement can be one of:
 
-* an [expression](/docs/expressions/index.html),
-* a [self-assignment](/docs/objects/definition.html#self-assignment),
+* an [expression](../expressions/index.html),
+* a [return](../objects/definition.html#return),
 * a member declaration,
 * a [local declaration](locals.html),
 * a [assignment](../core/variables.html#assignment),
@@ -79,7 +79,7 @@ Foo >= 0, foo <= 100, = "percent" ~~ The value is `"percent"` if `foo` between
                                   ~~ `0` and `100`, or false otherwise.
 ```
 
-A [self-assignment](/docs/objects/definition.html#self-assignment) statement can
+A [return](/docs/objects/definition.html#return) statement can
 not be used as a requirement of another one. So the following is incorrect:
 ```o42a
 foo >= 0, = "percent", foo <= 100 ~~Redundant statement.~~

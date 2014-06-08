@@ -7,7 +7,7 @@ order: 5
 Adapters
 ========
 <!--
-Copyright (C) 2010-2013 Ruslan Lopatin.
+Copyright (C) 2010-2014 Ruslan Lopatin.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -35,7 +35,7 @@ Adapter Declaration
 
 The adapter declaration syntax is following:
 
-> `'@' <interface> [ ['@' ['('] <ascendant> [')'] ] | ':'] '=' ['<'] <definition>`
+> `'@' <interface> ['@' ['('] <ascendant> [')'] | ':'] '=' ['<'] <definition>`
 
 where:
 
@@ -57,6 +57,34 @@ Interface :=> integer
 Object := void (
   Value := 12
   @Interface := interface (= Value)
+)
+```
+
+
+Short Syntax
+------------
+
+There is another form of field declaration and override syntax:
+
+> `'@' <interface> ['@' ['('] <ascendant> [')']] <definition>`
+
+This is a shorter way to write the following:
+
+> `'@' <interface> ['@' ['('] <ascendant> [')']] [':'] '=' * <definition>`
+
+The `<definition>` here consists of zero or more
+[phrase parts](../phrases/index.html). 
+
+When short syntax is used, a new adapter is declared, unless `<ascendant>`
+specified, or adapter with the given interface already present in ancestor,
+in which case the statement overrides an existing adapter.
+
+```o42a
+One := void (
+  @Integer (= 1) ~~ Declare adapter to `integer`.
+)
+Two := one (
+  @Integer (= 2) ~~ Override adapter to `integer`.  
 )
 ```
 

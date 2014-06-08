@@ -7,7 +7,7 @@ order: 6
 Inheritance
 ===========
 <!--
-Copyright (C) 2010-2013 Ruslan Lopatin.
+Copyright (C) 2010-2014 Ruslan Lopatin.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -19,6 +19,38 @@ Free Documentation License".
 Every object inherits some other object called _ancestor_. This means an
 inherited object has the same fields as ancestor, and the same value type,
 unless overridden.
+
+Ancestor Object Evaluation
+--------------------------
+
+An object inherits not than just an ancestor object. In fact, it inherits an
+ancestor expression. An ancestor expression is evaluated once per object,
+in the scope of the enclosing object. When executed in different scopes,
+an ancestor expression can resolve to different objects.
+```o42a
+A := void (
+  Foo := void (
+    F := 1
+  )
+  Bar := foo
+)
+
+B := a (
+  Foo = * (
+    G := 2
+  )
+)
+```
+
+An ancestor of `b: bar`, executed in the scope of enclosing object `b` will
+result to `b: foo` object, which contains a new field `g`. So an expression
+`b: bar: g` is valid and returns `2`.
+
+> Note that when object inherits object from another module, or inherits a
+> [static field][] the ancestor expression always resolves to the same ancestor
+> object.
+
+[static field]: fields.html#static-fields
 
 
 Definition Inheritance
@@ -72,7 +104,7 @@ In this case the `object` definition is overridden, and its value is `3`.
 The value type of inherited object should remain the same. That is, if ancestor
 has an _integer_ value, an inherited object can't be updated to have a _float_
 one. The only exception is a _void_: it can be overridden with definition of any
-type. Thats how `Integer` object inherits `Void` despite it has a different
+type. That's how `Integer` object inherits `Void` despite it has a different
 value type.
 
 
@@ -85,7 +117,7 @@ object and can be overridden.
 Note that despite _private_ fields are propagated to inherited object, they are
 not accessible (and thus can not be overridden).
 
-Also, the inherited object may declare new fields.
+Also, an inherited object may declare new fields.
 
 Example:
 ```o42a

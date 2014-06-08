@@ -7,7 +7,7 @@ order: 2
 Clause Content
 ==============
 <!--
-Copyright (C) 2010-2013 Ruslan Lopatin.
+Copyright (C) 2010-2014 Ruslan Lopatin.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -85,10 +85,10 @@ value of this part at the end:
   [array constructor](clauses.html#array-constructor),
   [initializer](clauses.html#initializer), and
   [interval](clauses.html#interval) bounds place their values as
-  [self-assignment](../objects/definition.html#self-assignment) statement;
+  [return](../objects/definition.html#return) statement;
 * the [name](clauses.html#name) phrase part places nothing;
 * the [imperative block](clauses.html#imperative-block) places itself unchanged;
-* the [declarative block](clauses.html#declarative-block]] places itself
+* the [declarative block](clauses.html#declarative-block) places itself
   unchanged.
 
 Examples:
@@ -189,8 +189,8 @@ Empty Content
 
 When the clause content is absent, the value is substituted unchanged.
 
-This creates a condition rather than a self-assignment statement when
-substituted inside a block:
+This creates a condition rather than a return statement when substituted inside
+a block:
 ```o42a
 Phrase :=> void (
   On :=< void

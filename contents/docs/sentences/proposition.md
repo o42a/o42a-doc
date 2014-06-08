@@ -7,7 +7,7 @@ order: 2
 Proposition
 ===========
 <!--
-Copyright (C) 2010-2013 Ruslan Lopatin.
+Copyright (C) 2010-2014 Ruslan Lopatin.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -38,16 +38,17 @@ The sentence evaluation result may be one of the following:
 
 * If the sentence is empty, it is ignored and evaluation continues to the next
   sentence.
-* If a [self-assignment](/docs/objects/definition.html#self-assignment)
-  statement successfully executed, an object value is assigned and the sentence
-  evaluation finishes.
-* If statements evaluated to false (i.e. the last
-  [alternative](statements.html#alternatives) failed), an object value becomes
-  `false` and evaluation finishes.
-* Otherwise, (i.e. when some [alternative](statements.html#alternatives) succeed
-  and did not contain a
-  [self-assignment](/docs/objects/definition.html#self-assignment) statement)
-  the evaluation continues to the next sentence.
+* If a [return][] or [yield][] statement successfully executed, a value is
+  returned and the sentence evaluation finishes.
+* If statements evaluated to false (i.e. the last [alternative][] failed),
+   a `false` value is returned and evaluation finishes.
+* Otherwise, (i.e. when some [alternative][] succeed and did not contain a
+  [return][] or [yield][] statement) the evaluation continues to the next
+  sentence.
+
+[return]: /docs/objects/definition.html#return
+[yield]: /docs/objects/definition.html#yield
+[alternative]: statements.html#alternatives
 
 The following sentence states that `value` should be positive:
 ```o42a
