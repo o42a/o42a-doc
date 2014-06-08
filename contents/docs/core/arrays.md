@@ -99,10 +99,8 @@ My array [10]           ~~ False value, as element index is invalid.
 ~~ The array of two strings.
 Var-array := string` array [["one", "sec" + "ond"]]
 Var-array [1]           ~~ `"second"` initially, until modified.
-{
-  Var-array [1] = "two" ~~ Assign `"two"` to second element.
-  Var-array [1]         ~~ Now it's `"two"`.
-}
+Var-array [1] <- "two"  ~~ Assign `"two"` to second element.
+Var-array [1]           ~~ Now it's `"two"`.
 ```
 
 

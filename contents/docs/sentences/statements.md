@@ -20,9 +20,10 @@ A statement can be one of:
 
 * an [expression](../expressions/index.html),
 * a [return](../objects/definition.html#return),
+* a [yield](../objects/definition.html#yield),
 * a member declaration,
 * a [local declaration](locals.html),
-* a [assignment](../core/variables.html#assignment),
+* an [assignment](../core/variables.html#assignment),
 * a [declarative block](#declarative-block), or
 * an [imperative block](imperatives.html).
 
