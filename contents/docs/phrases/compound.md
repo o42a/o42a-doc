@@ -25,13 +25,13 @@ Nested Clauses
 
 The clause content may contain a block, either
 [imperative](/docs/sentences/imperatives.html) or
-[declarative](../sentences/statements.html#declarative_block). They can be
+[declarative](../sentences/statements.html#declarative-block). They can be
 stand-alone, or parts of
-[constructor expression](../objects/creation.html#constructor_expression).
+[constructor expression](../objects/creation.html#constructor-expression).
 Such block may contain a nested clause declarations. These clauses are used when
 interpreting subsequent phrase parts. For example, the following code declares
 an [argument](clauses.html#argument) can follow the
-[single-quoted string](clauses.html#single-quoted_string):
+[single-quoted string](clauses.html#single-quoted-string):
 ```o42a
 Phrase :=> string (
   Foo :=< integer

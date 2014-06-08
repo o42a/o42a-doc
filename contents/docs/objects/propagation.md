@@ -39,7 +39,7 @@ Field Override
 --------------
 
 Field can be overridden, which means its definition can be updated,
-similarly to the [definition override](inheritance.html#definition_override) of
+similarly to the [definition override](inheritance.html#definition-override) of
 inherited object. Nested fields can be overridden also.
 
 An example:

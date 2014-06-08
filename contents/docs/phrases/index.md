@@ -7,7 +7,7 @@ order: 6
 Phrases
 =======
 <!--
-Copyright (C) 2010-2013 Ruslan Lopatin.
+Copyright (C) 2010-2014 Ruslan Lopatin.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -19,7 +19,7 @@ Free Documentation License".
 Phrases is a pure syntactic way of building a domain-specific expressions.
 Syntactic purity means that phrases does nothing to the language semantics. Any
 phrase is just an object construction expression and thus can be written in a
-canonical [form](../objects/creation.html#constructor_expression). The only
+canonical [form](../objects/creation.html#constructor-expression). The only
 reason of using phrases is better readability.
 
 The phrase syntax is:
@@ -32,16 +32,16 @@ where
 * `<part>` is one of:
     * [name](/docs/syntax/names.html);
     * [string](/docs/syntax/strings.html);
-    * [single-quoted string](#single-quoted_string);
+    * [single-quoted string](#single-quoted-string);
     * [array constructor](../core/arrays.html#array constructor);
     * phrase argument: `'[' <value> [',' <value>]... ']'`,  
       where `<value>` is an arbitrary [expression](/docs/expressions/index.html),
-      [single-quoted string](#single-quoted_string),
+      [single-quoted string](#single-quoted-string),
       or [array constructor](../core/arrays.html#array constructor);
     * [interval](#interval);
     * [initializer](#initializer);
     * [imperative block](../sentences/imperatives.html);
-    * [declarative block](../sentences/statements#declarative_block).
+    * [declarative block](../sentences/statements#declarative-block).
 
 The syntax of concrete phrase is defined by [clauses](clauses.html) declared in
 the object the `<prefix>` resolved to.
@@ -54,7 +54,7 @@ A single-quoted string has the same syntax as
 [string](/docs/syntax/strings.html), but is enclosed in a _single quotes_
 (''**'**'') instead of a _double quotes_ (**`"`**). It can be either a string
 literal or a text block. Multiple single-quoted strings are also
-[concatenated](../syntax/strings.html#string_concatenation) automatically.
+[concatenated](../syntax/strings.html#string-concatenation) automatically.
 
 A single-quoted string may not appear outside the phrase.
 

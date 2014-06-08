@@ -127,9 +127,9 @@ the local.
 
 The local scope content is a statement, and can be one of:
 
-* [declarative block](statements.html#declarative_block),
+* [declarative block](statements.html#declarative-block),
 * [imperative block](imperatives.html),
-* [named block](imperatives.html#named_blocks),
+* [named block](imperatives.html#named-blocks),
 * [assignment](../core/variables.html#assignment),
 * [expression](../expressions/index.html), or
 * another local scope declaration.

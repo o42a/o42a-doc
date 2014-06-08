@@ -17,7 +17,7 @@ Free Documentation License".
 -->
 
 Each object has a value of some basic type. This type is defined by inhered
-[type representation object](../core/index.html#basic_types).
+[type representation object](../core/index.html#basic-types).
 
 
 Value Type
@@ -32,7 +32,7 @@ The following scalar types supported in o42a:
 | `float`   | 64-bit floating-point number.
 | `string`  | Unicode string of variable length. Its length in bytes is stored as 32-bit integer internally.
 
-There are also compound and special [types](../core/index.html#basic_types),
+There are also compound and special [types](../core/index.html#basic-types),
 like link, array, macro, or directive.
 
 

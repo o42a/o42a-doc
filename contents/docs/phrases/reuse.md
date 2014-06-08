@@ -79,7 +79,7 @@ Phrase _set a [1] set b [2] set c [3]  ~~ Long form.
 Phrase [1, 2, 3]                       ~~ Short form.
 ```
 
-[Implicit clauses](compound.html#implicit_clauses) can not be reused directly,
+[Implicit clauses](compound.html#implicit-clauses) can not be reused directly,
 so the asterisk is always implied for them and is optional. 
 
 

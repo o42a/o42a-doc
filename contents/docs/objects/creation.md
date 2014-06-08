@@ -37,8 +37,8 @@ where
 
 * `<prefix>` is one of:
     * arbitrary expression, resulting to constructing object's ancestor;
-    * [ascendants expression](samples.html#ascendants_expression);
-    * [type arguments](../core/type_parameters.html#type_arguments);
+    * [ascendants expression](samples.html#ascendants-expression);
+    * [type arguments](../core/type_parameters.html#type-arguments);
 * `<definitions>` is a set of [sentences](/docs/sentences/index.html), forming
   constructing object's [definition](definition.html).
 

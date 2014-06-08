@@ -23,7 +23,7 @@ there are some limitations though:
 * an expression should be in canonical form, i.e. arbitrary phrase is not
   supported, only [constructor expression][] allowed.
 
-[constructor expression]: ../objects/creation.html#constructor_expression
+[constructor expression]: ../objects/creation.html#constructor-expression
 
 
 Phrase Object
@@ -36,7 +36,7 @@ Each phrase builds an object. This object is called __phrase object__.
 
 A phrase constructs an object depending on the first phrase part:
 
-* when it is a [declarative block](clauses.html#declarative_block), the phrase
+* when it is a [declarative block](clauses.html#declarative-block), the phrase
   object is inherited from phrase prefix;
 * when it corresponds to a clause, which content is an
   [expression](#expression), the phrase object inherits this expression;
@@ -81,14 +81,14 @@ corresponding clause's content in the scope of this definition and placing the
 value of this part at the end:
 
 * the [argument](clauses.html#argument),
-  [single-quoted string](clauses.html#single-quoted_string),
-  [array constructor](clauses.html#array_constructor),
+  [single-quoted string](clauses.html#single-quoted-string),
+  [array constructor](clauses.html#array-constructor),
   [initializer](clauses.html#initializer), and
   [interval](clauses.html#interval) bounds place their values as
   [self-assignment](../objects/definition.html#self-assignment) statement;
 * the [name](clauses.html#name) phrase part places nothing;
-* the [imperative block](clauses.html#imperative_block) places itself unchanged;
-* the [declarative block](clauses.html#declarative_block]] places itself
+* the [imperative block](clauses.html#imperative-block) places itself unchanged;
+* the [declarative block](clauses.html#declarative-block]] places itself
   unchanged.
 
 Examples:
@@ -161,7 +161,7 @@ Blocks
 ------
 
 When the clause content is either [imperative](/docs/sentences/imperatives.html)
-or [declarative](../sentences/statements.html#declarative_block) block, the
+or [declarative](../sentences/statements.html#declarative-block) block, the
 block is reproduced in object's definition:
 ```o42a
 Phrase :=> string (
@@ -224,6 +224,6 @@ Phrase [42]    ~~ Returns `42`. Has no connection to `phrase` object.
 Phrase Prefix
 -------------
 
-A phrase prefix can be used as a [field definition](#field_overrider) or as an
+A phrase prefix can be used as a [field definition](#field-overrider) or as an
 [expression](#expression). For that a `$Prefix` reference can be used in the
 appropriate clause content.

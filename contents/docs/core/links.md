@@ -31,15 +31,15 @@ or, when declaring a link field:
 
 > ``<field> [':'] {'='|'=>'|'=<'|'=<>'} <interface> '`' 'link' '=' <target>``
 
-[type arguments]: type_parameters.html#type_arguments
+[type arguments]: type_parameters.html#type-arguments
 
 where:
 
 * `<field>` is a left part of either
-  [field](/docs/objects/fields.html#field_declaration)
-  or [adapter](/docs/objects/adapters.html#adapter_declaration) declaration;
-* `<target>` is a [link target](#link_target) expression;
-* `<interface>` is a [link interface](#link_interface) reference.
+  [field](/docs/objects/fields.html#field-declaration)
+  or [adapter](/docs/objects/adapters.html#adapter-declaration) declaration;
+* `<target>` is a [link target](#link-target) expression;
+* `<interface>` is a [link interface](#link-interface) reference.
 
 
 Link Interface
@@ -86,18 +86,18 @@ apply it:
 
 * the link target can not be used as [sample](/docs/objects/samples.html);
 * when the link target is used as
-  [ancestor](/docs/objects/creation.html#constructor_expression), the
+  [ancestor](/docs/objects/creation.html#constructor-expression), the
   restrictions applied to the constructed object:
     * the constructed object can not have any
       [samples](/docs/objects/samples.html);
     * the constructed object's [type parameters](type_parameters.html) can not
       be altered;
     * the nested fields` ancestors can not be
-      [upgraded](../objects/propagation.html#ancestor_upgrade);
+      [upgraded](../objects/propagation.html#ancestor-upgrade);
     * all of these restrictions apply to the nested fields.
 
 The link target is evaluated on each access. A
-[keep value](../expressions/unary.html#keep_value) operator can be used to
+[keep value](../expressions/unary.html#keep-value) operator can be used to
 evaluate it once.
 
 
@@ -142,7 +142,7 @@ reference is valid and results to a `"baz"` string.
 >     C := a & b1 & b2 ~~ **Conflict**: `c: link` interface should be derived
 >                      ~~ from both `foo` and `bar`, which are not compatible.
 > Such conflicts should be resolved manually, by explicit
-> [link override](#link_override).
+> [link override](#link-override).
 
 
 Link Override
@@ -150,7 +150,7 @@ Link Override
 
 A link override provides another target expression to the link. Another link
 interface expression can also be provided (but see the
-[link target](#link_target) usage limitations).
+[link target](#link-target) usage limitations).
 
 A new link target should be compatible with (i.e. derived from) both new and old
 link interfaces.
@@ -215,7 +215,7 @@ by dereferencing the link when necessary:
   object itself, and if not found - in the link target.
 
 The link can be created with an object
-[constructor expression](/docs/objects/creation.html#constructor_expression).
+[constructor expression](/docs/objects/creation.html#constructor-expression).
 The link interface can be specified as type argument:
 ```o42a
 Lnk := integer` link (
@@ -323,8 +323,8 @@ But the assignment statement can be applied to a link also. Such statements
 interpreted as [phrases](/docs/phrases/index.html).
 
 The assignment clause can be declared similarly to the
-[binary operators](../phrases/operators.html#binary_operators) override. The
-[clause identifier](../phrases/clauses#clause_identifier) should be a
+[binary operators](../phrases/operators.html#binary-operators) override. The
+[clause identifier](../phrases/clauses#clause-identifier) should be a
 binding statement (`<-`).
 
 With custom assignment clause declared the link becomes a [property][]:
@@ -362,8 +362,8 @@ Property := integer` link (
 }
 ```
 
-The [value assignment](variables.html#value_assignment) and
-[combined assignment](variables.html#combined_assignment) statements can also be
+The [value assignment](variables.html#value-assignment) and
+[combined assignment](variables.html#combined-assignment) statements can also be
 used.
 
 [property]: http://wikipedia.org/wiki/Property_(programming)
