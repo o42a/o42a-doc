@@ -7,7 +7,7 @@ order: 8
 Source Files
 ============
 <!--
-Copyright (C) 2010-2013 Ruslan Lopatin.
+Copyright (C) 2010-2014 Ruslan Lopatin.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -20,7 +20,7 @@ An o42a source file is a text file with `.o42a` extension. The source file
 encoding considered UTF-8, unless explicitly [overridden](o42ac.html). Each
 project has at least one such file.
 
-A project may contain multiple source files. But despite their number, their
+A project may contain multiple source files. But despite their number, the
 `o42ac` compiler accepts only one as argument. This file contains a main module
 definition and the name of this file corresponds to the name of that module.
 
