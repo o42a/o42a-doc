@@ -7,7 +7,7 @@ order: 1
 References
 ==========
 <!--
-Copyright (C) 2010-2013 Ruslan Lopatin.
+Copyright (C) 2010-2014 Ruslan Lopatin.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -20,12 +20,12 @@ A reference is a syntactic construct which addresses something.
 
 The reference may address:
 
-* some [scope](#scope_reference),
-* a [member by name](#member_by_name),
-* a [parent member](#parent_member) by name,
-* a [member](#member_reference) of another object,
-* a [link target](../core/links.html#link_dereferencing), or
-* an [macro field expansion](../core/macros.html#macro_field_expansion).
+* some [scope](#scope-reference),
+* a [member by name](#member-by-name),
+* a [parent member](#parent-member) by name,
+* a [member](#member-reference) of another object,
+* a [link target](../core/links.html#link-dereferencing), or
+* an [macro field expansion](../core/macros.html#macro-field-expansion).
 
 
 Scope Reference
@@ -51,44 +51,44 @@ The following objects can be addressed by scope references:
 [Root]:                     ../core/index.html#root
 [void]:                     ../core/index.html#void
 [false]:                    ../core/index.html#false
-[field override]:           ../objects/propagation.html#implied_scope_usage
-[ascendants expression]:    ../objects/samples.html#implied_scope_usage
-[Macro expansion]:          ../core/macros.html#macro_expansion
-[Standard macro expansion]: ../core/macros.html#standard_macro_expansion
-[Local]:                    ../sentences/locals.html#accessing_locals
-[Anonymous local]:          ../sentences/locals.html#anonymous_local
+[field override]:           ../objects/propagation.html#implied-scope-usage
+[ascendants expression]:    ../objects/samples.html#implied-scope-usage
+[Macro expansion]:          ../core/macros.html#macro-expansion
+[Standard macro expansion]: ../core/macros.html#standard-macro-expansion
+[Local]:                    ../sentences/locals.html#accessing-locals
+[Anonymous local]:          ../sentences/locals.html#anonymous-local
 
 ---------------------
 
 Example:
 ```o42a
 Foo := //~~Root~~ void ~~This can be written without `//` prefix.~~ (
-  Value :=< //~~Root~~ integer ~~This can be written without '//' prefix.~~
-  Sum :=> :: ~~Parent field, i.e. `foo`.~~ (
-    Arg :=< / ~~Refers the module object.~~ foo ~~Refers module field `foo`~~
-    Value = foo: value + :~~Parent object, i.e. `sum'.~~ arg: value
+  Value :=< //~~Root~~ integer ~~This can be written without `//` prefix~~
+  Sum :=> :: ~~Parent field, i.e. `foo`~~ (
+    Arg :=< / ~~Refers the module object~~ foo ~~Refers module field `foo`~~
+    Value = foo: value + :~~Parent object, i.e. `sum`~~ arg: value
   )
 )
 ```
 
 > Notice the difference between the self (`:`) and parent member (`::`)
 > references. They mean the same in the following piece of code:
+> ```o42a
+> Foo := void (
+>   Bar :=> :  ~~ Refers the `foo` field.
+>   Baz :=> :: ~~ Also refers the `foo` field.
+> )
+> ```
 >
->     :::o42a
->     Foo := void (
->       Bar :=> :  ~~ Refers the `foo` field.
->       Baz :=> :: ~~ Also refers the `foo` field.
->     )
->
-> But have a different meaning here:
->
->     :::o42a
->     Foo := void (
->       Bar (
->         F :=> :  ~~ Refers the enclosing object inherited from `bar`.
->         G :=> :: ~~ Refers the `foo` field.
->       )
->     )
+> But have different meanings here:
+> ```o42a
+> Foo := void (
+>   Bar (
+>     F :=> :  ~~ Refers the enclosing object inherited from `bar`.
+>     G :=> :: ~~ Refers the `foo` field.
+>   )
+> )
+> ```
 
 
 Member by Name
@@ -167,9 +167,9 @@ Member Reference
 ----------------
 
 An object member (field, adapter or clause) can be referred to by
-[field access](../objects/fields.html#field_access),
-[adapter access](../objects/adapters.html#adapter_access),
-or [access to field of adapter](../objects/adapters.html#access_to_the_field_of_adapter)
+[field access](../objects/fields.html#field-access),
+[adapter access](../objects/adapters.html#adapter-access),
+or [access to field of adapter](../objects/adapters.html#access-to-the-field-of-adapter)
 references.
 
 Note that when accessing the named member of an object addressed by the scope
@@ -184,3 +184,43 @@ foo:: bar
 $local
 $$field of anonymous local
 ```
+
+Eager Reference
+---------------
+
+The syntax is:
+
+> `<expression> '>>'`
+
+Normally, an object value is (re-)evaluated on each request. This not always a
+required behaviour, as the result of evaluations may differ, or could be very
+excessive in terms of performance and resources usage.
+
+Also, an object value is evaluated when requested. I.e. it won't be evaluated
+immediately when object (e.g. field or local) constructed.
+
+To evaluate the object value immediately and to preserve it for later use, an
+eager reference could be used. Eager reference evaluates the value of
+`<expression>`, constructs a new object inherited from `<expression>` and
+returns it. The value of the resulting object is constant, and equal to
+previously evaluated value of `<expression>`.
+
+Note, that any object inherited from eager reference inherits its value too,
+unless the value definition is overridden in inherited object.
+
+
+Other
+-----
+
+These references are also supported, but discussed later:
+
+| Syntax                      | Description                  |
+|-----------------------------|------------------------------|
+| `<expression> '->'`         | [Link dereference][]         |
+| `<expression> '#' <field>`  | [Macro field expansion][]    |
+| `<expression> '##' <field>` | [Standard macro expansion][] |
+
+[Link dereference]: ../core/links.html#link-dereference
+[Macro field expansion]: ../core/macros.html#macro-field-expansion
+[Standard macro expansion]: ../core/macros.html#standard-macro-expansion
+
