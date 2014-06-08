@@ -7,7 +7,7 @@ order: 4
 Expressions
 ===========
 <!--
-Copyright (C) 2010-2013 Ruslan Lopatin.
+Copyright (C) 2010-2014 Ruslan Lopatin.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -25,11 +25,11 @@ An expression is one of:
 * [number](/docs/syntax/numbers.html);
 * [reference](references.html), which addresses some object;
 * [unary](unary.html) or [binary](binary.html) operator;
-* [ascendants expression](../objects/samples.html#ascendants_expression);
-* object [constructor expression](../objects/creation.html#constructor_expression);
-* [array constructor](../core/arrays.html#array_constructor);
+* [ascendants expression](../objects/samples.html#ascendants-expression);
+* object [constructor expression](../objects/creation.html#constructor-expression);
+* [array constructor](../core/arrays.html#array-constructor);
 * [phrase](/docs/phrases/index.html);
-* or [grouping expression](#grouping_expression).
+* or [grouping expression](#grouping-expression).
 
 
 Grouping Expression

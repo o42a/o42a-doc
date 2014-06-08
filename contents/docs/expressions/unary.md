@@ -7,7 +7,7 @@ order: 2
 Unary Operators
 ===============
 <!--
-Copyright (C) 2010-2013 Ruslan Lopatin.
+Copyright (C) 2010-2014 Ruslan Lopatin.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -37,13 +37,11 @@ The following prefix unary operators supported:
 |      | Other operators
 |------|-----------------
 | `\`  | **[Value of][]**. Extracts the value from any object.
-| `\\` | **[Keep value][]**. Extracts the value, stores it, and returns on subsequent executions.
 | `#`  | **[Macro expansion][]**.
 
-[overridden]:      ../phrases/operators.html#unary_operators
-[Value of]:        #valuje_of
-[Keep value]:      #keep_value
-[Macro expansion]: ../core/macros.html#macro_expansion
+[overridden]:      ../phrases/operators.html#unary-operators
+[Value of]:        #value-of
+[Macro expansion]: ../core/macros.html#macro-expansion
 
 ---------------------
 
@@ -104,52 +102,6 @@ the one of object `B`, which is not the same, and actually means:
 ```o42a
 A := `integer (= B)
 ```
-
-### Keep Value ###
-
-Object values are stateless by default. This means that the object value is
-evaluated each time it is requested, unless the object value is mutable (like
-variable or array). But this is not always the desired behavior.
-
-With a _keep value_ operator it is possible to preserve the once evaluated value
-and return it on subsequent requests.
-
-Here is a usage example:
-```o42a
-Left := \\a
-Right := \\b
-Print [left] ' + ' [right] ' = ' [left + right] nl
-```
-
-Note that each of the operands is evaluated only once. In contrast, the
-following code:
-```o42a
-Print [a] ' + ' [b] ' = ' [a + b] nl
-```
-
-evaluates each of them twice. This may cause a significant decrease in
-performance in case of heavy operand value evaluation. Also, this may lead to
-incorrect results in case the operand value evaluation has side effects or may
-change on subsequent evaluations (e.g. is random).
-
-The keep value operator constructs a stateful object. This object's value will
-be evaluated at most once, and then kept for subsequent requests. The object
-statefulness is inherited. So, if any ob the object's ascendants is stateful,
-then the object will be stateful too. There is no way to change this.
-
-The keep value operator applies to its operand as following:
-
-- If the operand is a reference, then it constructs a new, stateful object
-  inherited from operand.
-- If the operand is an expression constructing a new object, then the object
-  constructed will be stateful and will be used as a result of keep value
-  operator.
-
-> Note that any statements can be executed both in the scope of the declaring
-> object and in the scopes of its descendants, and any field used by these
-> statements can change its value definition if overridden. Thus, the
-> light-weight formula may become a heavy-weight one. So, avoid addressing the
-> same field's value more than once. Rather keep its value and use a kept one.
 
 
 Operators Precedence

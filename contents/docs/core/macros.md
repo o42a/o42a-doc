@@ -7,7 +7,7 @@ order: 4
 Macros
 ======
 <!--
-Copyright (C) 2012-2013 Ruslan Lopatin.
+Copyright (C) 2012-2014 Ruslan Lopatin.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -17,7 +17,7 @@ Free Documentation License".
 -->
 
 A macro is an object, which value is an arbitrary expression. This expression
-will be substituted whenever a [macro expansion](#macro_expansion) used.
+will be substituted whenever a [macro expansion](#macro-expansion) used.
 
 
 Macro Declaration
@@ -125,7 +125,7 @@ Foo #macro   ~~ Access field `macro` of object `foo` and expand it.
 
 The o42a standard library contains a `Macros` module. This module contains
 standard macros, which may be very helpful. To access and expand standard macro
-a special [scope reference](../expressions/references.html#scope_references)
+a special [scope reference](../expressions/references.html#scope-references)
 (**`##`**) can be used. The rules of
 [macro expansion](#macro_expansion) works for standard macro expansion too:
 ```o42a

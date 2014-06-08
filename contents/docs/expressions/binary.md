@@ -7,7 +7,7 @@ order: 3
 Binary Operators
 ================
 <!--
-Copyright (C) 2010-2013 Ruslan Lopatin.
+Copyright (C) 2010-2014 Ruslan Lopatin.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -53,34 +53,34 @@ The following binary operators supported:
 
 > Note, that the right operand should be at the same line with the left operand
 > and operator sign. The following code will raise a compile time error:
->
->     :::o42a
->     1 +  ~~ Right operand expected here.
->     2
+> ```o42a
+> 1 +  ~~ Right operand expected here.
+> 2
+> ```
 >
 > While the following code will not be interpreted as a binary operator:
->
->     :::o42a
->     1    ~~ First statement.
->     + 2  ~~ Second statement.
+> ```o42a
+> 1    ~~ First statement.
+> + 2  ~~ Second statement.
+> ```
 >
 > An [underscore](/docs/syntax/underscore.html) should be used to place the
 > binary operator on multiple lines:
+> ```o42a
+> ~~ Place an underscore on the next line (__recommended practice__).
+> 1 +
+> _2
 >
->     :::o42a
->     ~~ Place an underscore on the next line (__recommended practice__).
->     1 +
->     _2
->
->     ~~ Place an underscore before the sign.
->     1
->     _+ 2
+> ~~ Place an underscore before the sign.
+> 1
+> _+ 2
+> ```
 
 
 Operators Precedence
 --------------------
 
-Binary operators has lower precedence, than [unary operators](unary.html) and
+Binary operators has lower precedence than [unary operators](unary.html) and
 [reference](references.html) qualifiers.
 
 | Precedence | Operator
