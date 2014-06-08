@@ -49,11 +49,11 @@ Hello, World!
 Here is a "Hello, World!" program written in o42a:
 
 ```o42a
-Use namespace 'Console'.
+Use namespace 'Console'
 
-@Main := * {
-  Print "Hello, World!" nl.
-}
+@Main (
+  Print "Hello, World!" nl
+)
 ```
 
 > See the [explanation](docs/intro/hello_world_explained.html).
