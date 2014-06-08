@@ -142,26 +142,6 @@ B: foo @b ~~ The same as above. Qualifier is redundant here.
 B: foo @a ~~ Access the field `foo` of object `b` derived from `a`.
 ```
 
-If an object has multiple ascendants and some ascendants contain different
-fields with the same identifier, then unqualified field access means access to
-the __last__ ascendant in the list. To access the fields derived from other
-ascendants an explicit qualification required.
-
-Example:
-```o42a
-A := void (
-  Foo := 1 ~~ Declare the field `foo`.
-)
-B := void (
-  Foo := 1 ~~ Declare a field with the same name `foo`.
-)
-C := * & a & b ~~ `C` derived from both `a` and `b`.
-
-C: foo    ~~ Access the field `foo` of object `c` derived from `b`.
-C: foo @b ~~ The same as above. Qualifier is not required here, but may be a good idea.
-B: foo @a ~~ Access the field `foo` of object `c` derived from `a`.
-```
-
 Static Fields
 -------------
 
