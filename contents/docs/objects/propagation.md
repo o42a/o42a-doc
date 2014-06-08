@@ -7,7 +7,7 @@ order: 7
 Field Propagation
 =================
 <!--
-Copyright (C) 2010-2013 Ruslan Lopatin.
+Copyright (C) 2010-2014 Ruslan Lopatin.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -16,9 +16,9 @@ A copy of the license is included in the section entitled "GNU
 Free Documentation License".
 -->
 
-When derive (either inherit or propagate) the object, every field present in
-ascendant gets propagated to the derived object. The field definition remains
-the same, unless overridden. The nested fields are also propagated.
+When object is inherited, every field present in ancestor, except static ones,
+is propagated to the inherited object. The field definition remains the same,
+unless overridden. The nested fields are also propagated.
 
 An example:
 ```o42a
@@ -87,6 +87,37 @@ Object := ancestor (
 )
 ```
 
+Short Syntax
+------------
+
+There is another form of field override syntax:
+ 
+> `'*' <name> ['@' ['('] <ascendant> [')']] [<definition>]`
+
+This is a shorter way to write the following:
+ 
+> `<name> ['@' ['('] <ascendant> [')'] ] = * [<definition>]`
+
+The `<definition>` here consists of zero or more
+[phrase parts](../phrases/index.html). 
+
+```o42a
+A := void (
+  Field := integer (
+    = 1
+  )
+)
+
+B := a (
+  *Field (= 2) ~~ Short override syntax.
+)
+
+C := a (
+  Field := * (
+    = 2        ~~ Full override syntax equal to the short one.
+  )
+)
+```
 
 Ancestor Upgrade
 ----------------

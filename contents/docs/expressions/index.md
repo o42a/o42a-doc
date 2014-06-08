@@ -25,7 +25,6 @@ An expression is one of:
 * [number](/docs/syntax/numbers.html);
 * [reference](references.html), which addresses some object;
 * [unary](unary.html) or [binary](binary.html) operator;
-* [ascendants expression](../objects/samples.html#ascendants-expression);
 * object [constructor expression](../objects/creation.html#constructor-expression);
 * [array constructor](../core/arrays.html#array-constructor);
 * [phrase](/docs/phrases/index.html);

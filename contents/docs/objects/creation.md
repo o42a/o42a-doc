@@ -7,7 +7,7 @@ order: 1
 Object Creation
 ===============
 <!--
-Copyright (C) 2010-2013 Ruslan Lopatin.
+Copyright (C) 2010-2014 Ruslan Lopatin.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -36,10 +36,9 @@ The syntax is:
 where
 
 * `<prefix>` is one of:
-    * arbitrary expression, resulting to constructing object's ancestor;
-    * [ascendants expression](samples.html#ascendants-expression);
+    * arbitrary expression, resulting to constructing object's ancestor, or
     * [type arguments](../core/type_parameters.html#type-arguments);
-* `<definitions>` is a set of [sentences](/docs/sentences/index.html), forming
+* `<definitions>` is a set of [sentences](../sentences/index.html), forming
   constructing object's [definition](definition.html).
 
 Note that `<prefix>` itself can not be a constructor expression or phrase,
@@ -70,7 +69,8 @@ foo (           ~~ Inherit some object `foo`.
 Phrase
 ------
 
-Any phrase can be reduced to canonical form, which is a constructor expression. So, the following:
+Any phrase can be reduced to canonical form, which is a constructor expression.
+So, the following:
 ```o42a
 Use object 'main' from 'console' as 'run'
 ```

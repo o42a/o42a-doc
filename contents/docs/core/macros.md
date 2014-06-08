@@ -70,7 +70,7 @@ The macro expansion can be used in the following situations:
 
 * as type parameter or argument;
 * as statement;
-* as a value of self-assignment statement;
+* as a value of return or yield statements;
 * as field definition, or
 * as phrase argument.
 

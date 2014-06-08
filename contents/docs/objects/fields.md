@@ -7,7 +7,7 @@ order: 4
 Fields
 ======
 <!--
-Copyright (C) 2010-2013 Ruslan Lopatin.
+Copyright (C) 2010-2014 Ruslan Lopatin.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -31,7 +31,7 @@ Field Declaration
 
 Field declaration syntax is:
 
-> `[<visibility>] <name> [ ['@' ['('] <ascendant> [')'] ] | ':'] [{'=' | '=>' | '=<' | '=<>'}] <definition>`
+> `[<visibility>] <name> ['@' ['('] <ascendant> [')'] | ':'] ['=' | '=>' | '=<' | '=<>'] <definition>`
 
 where:
 
@@ -49,10 +49,15 @@ where:
   to its ancestor.
 
 The _colon_ (**`:`**) presence before the _equals sign_ (**`=`**) indicates the
-field declaration, while it's absence means the field override. In the latter
+field declaration, while its absence means the field [override][]. In the latter
 case it is expected that the field with the same identifier is present in
 object's ascendant. Because object may have multiple ascendants, it is possible
 to explicitly specify an `<ascendant>` the overridden field is originated from.
+
+There is also a [short form][] of field override syntax.
+
+[override]: propagation.html#field-override
+[short form]: propagation.html#short-syntax
 
 The sign following the _equals sign_ indicates the following:
 
@@ -155,4 +160,62 @@ C := * & a & b ~~ `C` derived from both `a` and `b`.
 C: foo    ~~ Access the field `foo` of object `c` derived from `b`.
 C: foo @b ~~ The same as above. Qualifier is not required here, but may be a good idea.
 B: foo @a ~~ Access the field `foo` of object `c` derived from `a`.
+```
+
+Static Fields
+-------------
+
+Static fields are named objects declared only once. They never
+[propagated](propagation.html) to inherited objects, but still accessible from
+them, just like any other field.
+
+Static field declarations syntax is the same as ordinary one, except the `::=`
+symbol is used instead of `:=`:
+
+Static fields are not propagated, so they can not be overridden. A field
+override syntax is irrelevant to them.
+
+Static fields can be accessed with exactly the same syntax as ordinary fields.
+ 
+A static field can only be declared in module or inside another static field.
+
+
+Aliases
+-------
+
+Aliases are named expressions, which can be accessed just like fields.
+
+An alias declaration syntax is similar to field declaration, except the `:-`
+symbol is used instead of `:=`:
+
+> `[<visibility>] <name> ':-' <expression>`
+
+where:
+
+* `<visibility>` is an alias visibility, similar to field visibility,
+* `<name>` is an alias name,
+* `<expression>` is arbitrary expression.
+
+If an alias expression constructs an object, then such object will be
+constructed at most once per owner object.
+ 
+Aliases can be accessed with exactly the same syntax as fields.
+
+Aliases can not be overridden. But there is a special case. If alias expressions
+is reference to field of the same owner object, then such alias becomes just
+another name for aliased field. So, overriding such alias becomes equal to
+overriding the aliased field:
+```o42a
+A := void (
+  Field := 1     ~~ Declare a field.
+  Alias :- field ~~ Create an alias for `field`.
+)
+A: field ~~ 1
+A: alias ~~ 1, the same as `a: field`.
+
+B := a (
+  Alias = 2      ~~ This is valid.
+)
+B: field ~~ 2, overridden with alias.
+B: alias ~~ 2, the same as `b: field`.
 ```

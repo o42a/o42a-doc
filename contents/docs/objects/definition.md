@@ -7,7 +7,7 @@ order: 3
 Value Definition
 ================
 <!--
-Copyright (C) 2010-2013 Ruslan Lopatin.
+Copyright (C) 2010-2014 Ruslan Lopatin.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -16,7 +16,7 @@ A copy of the license is included in the section entitled "GNU
 Free Documentation License".
 -->
 
-An object value definition consists of [sentences](/docs/sentences/index.html),
+An object value definition consists of [sentences](../sentences/index.html),
 which define the algorithm of the value evaluation.
 
 
@@ -24,7 +24,7 @@ Value Evaluation
 ----------------
 
 An object value is evaluated on each request, unless it has a stateful type like
-[variable](/docs/core/variables.html) or mutable [array](/docs/core/arrays.html)
+[variable](../core/variables.html) or mutable [array](../core/arrays.html)
 (not row). A client code may request the value evaluation to happen at most once
 with a [keep value](../expressions/unary.html#keep-value) operator.
 
@@ -40,7 +40,7 @@ B := a (
 )
 ```
 
-Here objects `A` and `B` has the same definition, but different values: the
+Here objects `A` and `B` have the same definition, but different values: the
 value of `A` is `2`, while the value of `B` is `42`.
 
 
@@ -67,10 +67,10 @@ In this case an object ancestor is the same, as an ancestor of the expression
 result.
 
 
-### Self-Assignment ###
+### Return ###
 
-Within an object definition body a _self-assignment_ statement can be used to
-provide a value for the object.
+Within an object definition body the _return_ statement can be used to provide
+a value for the object.
 
 The syntax is:
 
@@ -84,6 +84,29 @@ Integer (= 1)
 String (= "value")
 Foo (= a + b)
 ```
+
+### Yield ###
+
+A value can be yielded with a _yield_ statement, which has the following syntax:
+
+> `'<<' <value>`
+
+where `<value>` is an arbitrary expression producing the object value.
+
+The _yield_ statement is similar to _return_ one. But it returns evaluated
+value only once per object. The next time the same object's value will be
+requested, the value evaluation will continue right after the yield statement.
+
+Example:
+```o42a
+Generator := (
+  << 1
+  << 2
+  << 3
+)
+Print [generator, generator, generator] nl ~~ Prints `123`.
+```
+
 
 ### Conditional Values ###
 

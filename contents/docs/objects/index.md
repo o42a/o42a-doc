@@ -25,5 +25,4 @@ Object has:
 * **[fields](fields.html)** - a nested objects with identifiers,
 * **[adapters](adapters.html)** - an additional object interfaces,
 * an **[ancestor](inheritance.html)** - a reference to a object this one
-  inherited from,
-* **[samples](samples.html)** - a set of objects this one propagated from.
+  inherited from.

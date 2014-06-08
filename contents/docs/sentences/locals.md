@@ -7,7 +7,7 @@ order: 7
 Locals
 ======
 <!--
-Copyright (C) 2013 Ruslan Lopatin.
+Copyright (C) 2013,2014 Ruslan Lopatin.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -148,8 +148,8 @@ can be enclosed into the block though:
 ```o42a
 1 $ left:
 2 $ right (
-  = $Left + $right ~~ Self-assignment is not a valid scope content.
-                   ~~ But it can be used inside parentheses.
+  = $Left + $right ~~ Return is not a valid scope content,
+                   ~~ but it can be used inside parentheses.
 )
 ```
 

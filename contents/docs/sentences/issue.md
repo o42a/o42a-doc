@@ -7,7 +7,7 @@ order: 4
 Issue
 =====
 <!--
-Copyright (C) 2010-2013 Ruslan Lopatin.
+Copyright (C) 2010-2014 Ruslan Lopatin.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -40,5 +40,6 @@ An issues sentence alone (e.g. as a last sentence of declarative block) is
 treated as an issue preceding an empty sentence.
 
 An issue may not contain any member declarations,
-[self-assignment](/docs/objects/definition.html#self-assignment) statements,
+[return](../objects/definition.html#return) or
+[yield](../objects/definition.html#yield) statements,
 or [imperative blocks](imperatives.html).

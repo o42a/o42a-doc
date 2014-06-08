@@ -7,7 +7,7 @@ order: 3
 Arrays
 ======
 <!--
-Copyright (C) 2010-2013 Ruslan Lopatin.
+Copyright (C) 2010-2014 Ruslan Lopatin.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -109,8 +109,9 @@ Var-array [1]           ~~ `"second"` initially, until modified.
 Array Value Definition
 ----------------------
 
-Array object's value can be defined just as any other one, with a
-[self-assignment](/docs/objects/definition.html#self-assignment) statement.
+Array object's value can be defined just as any other one, e.g. with a
+[return](/docs/objects/definition.html#return)
+or [yield](/docs/objects/definition.html#yield) statement.
 
 `Row` and `Array` has different [value types](../objects/value.html#value-type),
 but they can be converted from one to another:
@@ -120,6 +121,6 @@ Var-array := integer` array ( ~~ Declare the (mutable) array of integers.
 )
 ```
 
-Note however, that self-assignment statement copies an array content (unless
-a row assigned to the row). It is possible to create a [link](links.html) to
-array, or array [variable](variables.html) to pass arrays by reference.
+Note however, that return and yield statements copy an array content (unless
+a row returned from row object). It is possible to create a [link](links.html)
+to array, or array [variable](variables.html) to pass arrays by reference.
