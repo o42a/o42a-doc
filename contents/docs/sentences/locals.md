@@ -1,7 +1,7 @@
 ---
 title: Locals
 template: doc.jade
-order: 7
+order: 3
 ---
 
 Locals
@@ -16,7 +16,7 @@ A copy of the license is included in the section entitled "GNU
 Free Documentation License".
 -->
 
-Locals are named expressions existing during the value evaluation only.
+Locals are named expressions existing during the object value evaluation only.
 
 A local can be declared similarly to a field:
 
@@ -25,19 +25,18 @@ A local can be declared similarly to a field:
 where:
 
 * `<name>` is a local name;
-* `<definition>` is an arbitrary expression, [link](../core/links.html), or
-[variable](../core/variables.html) declaration.
+* `<definition>` is an arbitrary expression.
 
 The `:=` and `=` signs can be used interchangeably and mean the same.
 
 Unlike fields, the locals can be declared anywhere in the sentence. Even inside
-[issues](issue.html).
+[interrogative sentences](index.html#interrogative-sentence).
 
 A local declaration is a statement, which may fail. If this happens, the value
 evaluation aborts and results to false.
 
 A local declaration is executed once. The local then stores the expression
-evaluation result. This result can be used many times without expression
+evaluation result. This result can be used multiple times without expression
 re-evaluation.
 
 
@@ -46,7 +45,7 @@ Accessing Locals
 
 A local can be accessed by name, just like any field. However, the local may
 have the same name as some field. To avoid confusion a local scope reference
-(**`$`**) may be used to require a local access explicitly:
+(**`$`**) can be used to require a local access explicitly:
 ```o42a
 $Local = 1
 = $Local + local ~~ Both operands access the same local.
@@ -56,7 +55,7 @@ $Local = 1
 Because locals exist only during the object value evaluation, they can not be
 accessed by object fields.
 
-Also, the local can be accessed only after its declaration. The following rules
+Also, a local can be accessed only after its declaration. The following rules
 apply to the locals visibility:
 
 * A local is not visible outside the block it is declared in:
@@ -69,30 +68,28 @@ apply to the locals visibility:
 ```o42a
 $Local = 1, = $local + 1
 ```
-* A local declared inside an [alternative](statements.html#alternatives)
-  is not visible outside this alternative, unless this alternative is the only
-  one of the sentence:
+* A local declared inside an [alternative][] is not visible outside this
+  alternative, unless this alternative is the only one of the sentence:
 ```o42a
 $Local = 1;
 $Local + 1 ~~ Error. The local is not visible in another alternative.
 ```
-* A local declared inside a [proposition](proposition.html) or
-  [claim](claim.html) with only one [alternative](statements.html#alternatives)
-  is visible in subsequent sentences:
+* A local declared in a non-interrogative sentence with only one
+ [alternative][] is visible in subsequent sentences:
 ```o42a
 $Local = 1, $local > 0.
 = $Local - 1 ~~ Correct.
 ```
-* A local declared inside an [issue](issue.html) with only one
-  [alternative](statements.html#alternatives) is visible in the following
-  sentence, but not in the one next to it:
+* A local declared in an [interrogative](intex.html#interrogative-sentence)
+  sentence with only one [alternative][] is visible in the next
+  non-interrogative sentence, but not in the one next to it:
 ```o42a
 $Local = 1, $local > 0? = $Local - 1 ~~ Correct.
 = $Local                              ~~ Error.
 ```
 
 Note that in contrast to enclosing object's fields, the objects created during
-the value evaluation have full access to locals:
+the value evaluation has full access to locals:
 ```o42a
 $Left = 1
 $Right = 2
@@ -103,6 +100,7 @@ $Right = 2
 )
 ```
 
+[alternative]: statements.html#alternatives
 
 Local Scope
 -----------
@@ -142,7 +140,7 @@ The colon can be omitted when the local scope content is unnamed block.
 The local scope content can be placed on a new line after the colon.
 
 Note that not any statement allowed as a local scope content. Such statements
-can be enclosed into the block though:
+can be enclosed into a block though:
 ```o42a
 1 $ left:
 2 $ right (
@@ -157,7 +155,7 @@ becomes the same as the local's name. Here is an example of a local scope loop:
 ``3 $ i { ~~ `I` is a variable loop counter,
           ~~ and a block name.
   Print [i] '/3' nl
-  $I > 1? I -<< 1... i ~~ Decrease and repeat `i` while it is more than one. 
+  I > 1? I -<< 1... i ~~ Decrease and repeat `i` while it is more than one. 
 }
 ```
 
@@ -182,5 +180,5 @@ they are treated differently:
 ```o42a
 "abc" $:           ~~ Declare anonymous string.
 $$length $ length: ~~ Declare `length` equal to string length.
-print "`Length` local: " [$length] " == string length" [$$length] nl
+print "`Length` local: " [$length] " == string length " [$$length] nl
 ```
