@@ -7,21 +7,17 @@ mixin pager(news)
     ul(class="pager")
       if news.hasMore
         li(class="previous")
-          a(href=env.helpers.relativeUrl(
-              page,
-              "news/news-" + (env.helpers.pageNumber(page) + 1) + ".html"))
+          a(href=href=env.helpers.pageUrl(page, "news/index", +1))
             span(class="glyphicon glyphicon-arrow-left")
             |&nbsp;Older
       if news.offset
         li(class="next")
-          a(href=env.helpers.relativeUrl(
-              page,
-          "news/news-" + (env.helpers.pageNumber(page) - 1) + ".html"))
+          a(href=env.helpers.pageUrl(page, "news/index", -1))
             |Newer&nbsp;
             span(class="glyphicon glyphicon-arrow-right")
 
 block article
-  h1 News Archive
+  h1=page.title
   -var news = env.helpers.news(contents, page.metadata.offset, 10)
   +pager(news)
   each article in news.articles
