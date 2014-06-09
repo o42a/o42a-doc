@@ -1,5 +1,5 @@
 {
-  "title": "News Archive",
+  "title": "News",
   "template": "news-archive.jade",
   "offset": 0
 }

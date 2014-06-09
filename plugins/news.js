@@ -33,11 +33,21 @@ module.exports = function(env, callback) {
       hasMore: (offset + result.length) < all.length
     };
   };
-  env.helpers.pageNumber = function(page) {
+  env.helpers.pageUrl = function(page, prefix, delta) {
     var name = page.filename;
-    return parseInt(name.substring(
-        name.lastIndexOf('-') + 1,
-        name.lastIndexOf('.')));
+    var slashIdx = name.lastIndexOf('/');
+    if (slashIdx >= 0) name = name.substring(slashIdx + 1);
+    var hyphenIdx = name.lastIndexOf('-');
+    var pageNumber;
+    if (hyphenIdx < 0) {
+      pageNumber = 1;
+    } else {
+      pageNumber =
+        parseInt(name.substring(hyphenIdx + 1, name.lastIndexOf('.')));
+    }
+    pageNumber += delta;
+    if (pageNumber == 1) return env.helpers.htmlUrl(page, prefix);
+    return env.helpers.htmlUrl(page, prefix + '-' + pageNumber);
   };
   callback();
 };
