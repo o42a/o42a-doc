@@ -46,9 +46,9 @@ A declarative block is a group of sentences enclosed into parentheses:
 
 #
 
-Each statement, except the member declaration, has a
+Each statement, except a member declaration, has a
 [logical value](../objects/value.html#logical-value). It is possible to
-logically combine the statements, separating them with:
+logically combine the statements by separating them with:
 
 * a colon (**`,`**) to declare the first statement is a
   [requirement](#requirements) of the other, or
@@ -80,7 +80,7 @@ Foo >= 0, foo <= 100, = "percent" ~~ The value is `"percent"` if `foo` between
                                   ~~ `0` and `100`, or false otherwise.
 ```
 
-A [return](/docs/objects/definition.html#return) statement can
+A [return](../objects/definition.html#return) statement can
 not be used as a requirement of another one. So the following is incorrect:
 ```o42a
 foo >= 0, = "percent", foo <= 100 ~~Redundant statement.~~

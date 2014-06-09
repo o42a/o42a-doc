@@ -123,10 +123,4 @@ Signum :=> integer (
 )
 ```
 
-Note that the conditions are tested in order of their appearance.
-
-----------
-
-> Learn more about [sentences](/docs/sentences/index.html), then read the
-> [Understanding The Value Definition](../sentences/definition.html) article
-> to fully understand the value definition concepts.
+Note that conditions are tested in order of their appearance.

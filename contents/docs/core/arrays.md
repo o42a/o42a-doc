@@ -108,8 +108,8 @@ Array Value Definition
 ----------------------
 
 Array object's value can be defined just as any other one, e.g. with a
-[return](/docs/objects/definition.html#return)
-or [yield](/docs/objects/definition.html#yield) statement.
+[return](../objects/definition.html#return)
+or [yield](../objects/definition.html#yield) statement.
 
 `Row` and `Array` has different [value types](../objects/value.html#value-type),
 but they can be converted from one to another:
