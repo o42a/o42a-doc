@@ -44,10 +44,10 @@ Other configurations not tested.
 
 ### Dependencies ###
 
-* [Java SE 1.7](http://www.oracle.com/technetwork/java/index.html)
-* [LLVM 3.3](http://llvm.org)
+* [Java SE 1.8](http://www.oracle.com/technetwork/java/index.html)
+* [LLVM 3.4](http://llvm.org)
 * [ICU 4.6](http://icu-project.org) (May also work with earlier releases)
-* [Apache Ant 1.8](http://ant.apache.org/)
+* [Apache Ant 1.9](http://ant.apache.org/)
 * [GNU Make](http://gnu.org/software/make/)
 * [GCC](http://gnu.org/software/gcc/) or compatible C/C++ compiler
 * [Bash](http://gnu.org/software/bash/)
