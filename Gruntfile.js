@@ -39,7 +39,17 @@ module.exports = function(grunt) {
       }
     },
     wintersmith: {
-      build: {}
+      build: {},
+      "o42a.org": {
+        options: {
+          config: "o42a.org.config.json"
+        }
+      },
+      "o42a.bitbucket.org": {
+        options: {
+          config: "o42a.bitbucket.org.config.json"
+        }
+      }
     },
     clean: {
       options: {
@@ -57,6 +67,12 @@ module.exports = function(grunt) {
 
   grunt.registerTask(
     'default',
-    ['less:production', 'concat:production', 'wintersmith']);
-  grunt.registerTask('build', ['less', 'concat', 'wintersmith']);
+    ['less:production', 'concat:production', 'wintersmith:build']);
+  grunt.registerTask(
+    'o42a.org',
+    ['less:production', 'concat:production', 'wintersmith:o42a.org']);
+  grunt.registerTask(
+    'o42a.bitbucket.org',
+    ['less:production', 'concat:production', 'wintersmith:o42a.bitbucket.org']);
+  grunt.registerTask('build', ['less', 'concat', 'wintersmith:build']);
 };

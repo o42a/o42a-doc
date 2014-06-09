@@ -1,9 +1,13 @@
 {
   "locals": {
-    "url": "http://localhost:8080",
+    "url": "http://o42a.org",
     "name": "o42a Programming Language",
     "owner": "Ruslan Lopatin",
-    "description": "o42a official site and documentation"
+    "description": "o42a official site and documentation",
+    "ga": {
+      "code": "UA-20313524-1",
+      "host": "o42a.org"
+    }
   },
   "baseUrl": ".",
   "require": {
