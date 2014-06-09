@@ -55,8 +55,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-wintersmith');
 
-  grunt.registerTask('default', ['less', 'concat', 'wintersmith']);
   grunt.registerTask(
-    'build',
+    'default',
     ['less:production', 'concat:production', 'wintersmith']);
+  grunt.registerTask('build', ['less', 'concat', 'wintersmith']);
 };
