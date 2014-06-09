@@ -5,11 +5,12 @@ mixin release(release)
       | #{release}
 
 ul(class="nav nav-pills nav-stacked")
-  +release('0.2.8')
+  +release('0.2.10')
 ul(class="nav bav-pills nav-stacked nav-header")
   li: a(class="text-muted")
     | Older Releases
   ul(class="nav nav-pills nav-stacked nav-nested")
+    +release('0.2.8')
     +release('0.2.7')
     +release('0.2.6')
     +release('0.2.5')

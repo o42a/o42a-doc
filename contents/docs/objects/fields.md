@@ -181,10 +181,10 @@ constructed at most once per owner object.
  
 Aliases can be accessed with exactly the same syntax as fields.
 
-Aliases can not be overridden. But there is a special case. If alias expressions
-is reference to field of the same owner object, then such alias becomes just
-another name for aliased field. So, overriding such alias becomes equal to
-overriding the aliased field:
+Aliases can not be overridden. But there is a special case. If the alias
+expression is a reference to a field of the same owner object, then such alias
+becomes just another name for aliased field. So, overriding such alias becomes
+equal to overriding the aliased field:
 ```o42a
 A := void (
   Field := 1     ~~ Declare a field.
