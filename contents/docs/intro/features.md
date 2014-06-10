@@ -24,18 +24,22 @@ Syntax
         * _comma_ (`,`), which stands for _logical AND_, or
         * _semicolon_ (`;`), which stands for _logical OR_.
 * _Colon_ (`:`) is used as a field access modifier:
-```o42a
-Foo: bar      ~~ Accessing field `bar` of object `foo`
-Foo: bar: baz ~~ Accessing field `baz` of field `bar` of object `foo`
-```
+  ```o42a
+  Foo: bar      ~~ Accessing field `bar` of object `foo`
+  Foo: bar: baz ~~ Accessing field `baz` of field `bar` of object `foo`
+  ```
 * o42a supports _phrases_ - a pure syntactic, customizable way to build a
   domain-specific expressions. It is possible to declare syntactic rules
   to interpret the following expressions:
-```o42a
-Print "Hello, World!" nl
-Use object 'main' from 'console' as 'run'
-SELECT ['t1.foo', 't1.bar', 't2.baz'] FROM 't1' LEFT OUTER JOIN 't2' ON 'id' ORDER BY 'foo'
-```
+  ```o42a
+  Print "Hello, World!" nl
+
+  Use object 'main' from 'console' as 'run'
+
+  SELECT ['t1.foo', 't1.bar', 't2.baz']
+  _FROM 't1' LEFT OUTER JOIN 't2' ON 'id'
+  _ORDER BY 'foo'
+  ```
 
 Values & Type System
 --------------------
@@ -67,15 +71,15 @@ Logical Meaning
 * Every expression has a logical meaning derived from the value it produces.
   The syntax is designed in favor of this. For example, here is a definition of
   the arithmetic `signum` function:
-```o42a
-Signum :=> integer (
-  Arg :=< integer
-  Arg > 0? = 1  ~~ If the `arg` is positive, return 1.
-  Arg < 0? = -1 ~~ Otherwise, if the `arg` is negative, return -1.
-  = Arg         ~~ Otherwise, return the `arg` itself.
-                ~~ Can be either zero or false.
-)
-```
+  ```o42a
+  Signum :=> integer (
+    Arg :=< integer
+    Arg > 0? = 1  ~~ If the `arg` is positive, return 1.
+    Arg < 0? = -1 ~~ Otherwise, if the `arg` is negative, return -1.
+    = Arg         ~~ Otherwise, return the `arg` itself.
+                  ~~ Can be either zero or false.
+  )
+  ```
 
 
 Declarative & Imperative Paradigms
@@ -91,20 +95,20 @@ Declarative & Imperative Paradigms
   structure by declaring its members.
 * The [imperative code][] may contain advanced evaluation algorithms,
   such as loops:
-```o42a
-$I = ``0 ~~ Local variable initialized to zero. 
-{
-  ~~ Some code here. ~~
-  I +<< 1   ~~ Increase `i`.
-  I < 10?.. ~~ While `i` less than 10, repeat.
-}
-{
-  ~~ Some code here. ~~
-  I +<< 1    ~~ Increase `i`.
-  I >= 20?!  ~~ Exit when `i` greater or equal to 20.
-  ...        ~~ Repeat otherwise.
-}
-```
+  ```o42a
+  $I = ``0 ~~ Local variable initialized to zero. 
+  {
+    ~~ Some code here. ~~
+    I +<< 1   ~~ Increase `i`.
+    I < 10?.. ~~ While `i` less than 10, repeat.
+  }
+  {
+    ~~ Some code here. ~~
+    I +<< 1    ~~ Increase `i`.
+    I >= 20?!  ~~ Exit when `i` greater or equal to 20.
+    ...        ~~ Repeat otherwise.
+  }
+  ```
 
 Object Model
 ------------
