@@ -7,7 +7,7 @@ order: 2
 Names
 =====
 <!--
-Copyright (C) 2010-2013 Ruslan Lopatin.
+Copyright (C) 2010-2014 Ruslan Lopatin.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -44,9 +44,6 @@ When the name contains two sequential words it is necessary to separate them by
 space, like this:
 > `Hello World`
 
-or this:
-> `Hello                 World`
-
 
 Number
 ------
@@ -76,6 +73,9 @@ Names may contain hyphens (`-`). There are multiple hyphen characters in
 [Unicode][]. o42a makes no difference between them internally, but applies
 different syntactic rules for the sake of grammatical correctness. The following
 hyphen symbols recognized:
+
+|        |                     |
+|--------|---------------------|
 | U+002D | HYPHEN-MINUS        |
 | U+2010 | HYPHEN              |
 | U+2011 | NON-BREAKING HYPHEN |
