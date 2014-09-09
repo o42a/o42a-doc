@@ -7,7 +7,7 @@ order: 3
 Compound Phrase
 ===============
 <!--
-Copyright (C) 2010-2013 Ruslan Lopatin.
+Copyright (C) 2010-2014 Ruslan Lopatin.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -44,7 +44,7 @@ Phrase 'value' [2] ~~ Argument clause is searched in single-quoted string clause
 ~~ Canonical form is:
 Phrase (
   = "value"
-  Foo = 2
+  Foo = * (= 2)
 )
 ```
 
@@ -98,10 +98,10 @@ Println (
 Implicit clauses inside implicit clauses are also allowed:
 ```o42a
 Println :=> void (
-  <*Printer> {            ~~ Implicit clause, which constructs an imperative block.
-    <*> Print (           ~~ Anonymous implicit clause, which constructs an expression.
-      <*> Text = string ( ~~ Implicit clause, overriding the field `text`.
-        <''>              ~~ Single-quoted string clause.
+  <*Printer> {       ~~ Implicit clause, which constructs an imperative block.
+    <*> Print (      ~~ Anonymous implicit clause, which constructs an expression.
+      <*> Text = * ( ~~ Implicit clause, overriding the field `text`.
+        <''> ()      ~~ Single-quoted string clause.
       )
     )
     Print _nl
@@ -111,7 +111,7 @@ Println :=> void (
 Println 'Hello' ~~ This is the same as:
 Println (
   { ~~ This block is constructed implicitly.
-    Print (Text = string (= "Hello"))
+    Print (Text = * (= "Hello"))
     Print (Text = "\n")
   }
 )

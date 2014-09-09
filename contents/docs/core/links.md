@@ -72,7 +72,7 @@ Bar := target` link = target ~~ The same as above.
 ```o42a
 Link 1 := `"Target value" ~~ Link interface is `string`.
 Link 2 := `foo (          ~~ Link interface is `foo`.
-  Bar = 2
+  Bar := 2
 )
 Link 3 := `foo & bar      ~~ Link interface is `foo`.
 ```
@@ -148,12 +148,12 @@ A := void (
   Link := `target
 )
 B := a (
-  Link = integer` link = target
+  Link = integer` * = target
   ~~ **Error**: `integer` is not derived from `target`.
 )
 C := a (
   Foo := target
-  Link = target` link = foo
+  Link = target` * = foo
   ~~ Interface remains the same, while the target is changed.
 )
 D := a (

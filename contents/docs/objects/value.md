@@ -7,7 +7,7 @@ order: 2
 Object Value
 ============
 <!--
-Copyright (C) 2010-2013 Ruslan Lopatin.
+Copyright (C) 2010-2014 Ruslan Lopatin.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -54,11 +54,11 @@ The logical value can be defined explicitly, by defining it's requirement:
 ```o42a
 Positive :=> string (
   Value :=< integer
-  value > 0 ~~A requirement for the value following the comma.~~, = "positive".
+  Value > 0 ~~A requirement for the value following the comma.~~, = "positive".
 )
 
-Positive (value = 1)  ~~ Logical value is `true` and the value is `"positive"`.
-Positive (value = -1) ~~ Logical value is `false` and the value does not exist.
+Positive (*value (= 1))   ~~ Logical value is `true` and the value is `"positive"`.
+Positive (*value (= -1))  ~~ Logical value is `false` and the value does not exist.
 ```
 
 Also, the logical value can be determined implicitly, from it's definition

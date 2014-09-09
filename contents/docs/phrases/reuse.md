@@ -28,8 +28,8 @@ the reused clauses.
 An example:
 ```o42a
 Phrase :=> void (
-  Foo :=< `integer
-  Bar :=< `string
+  Foo :=< integer` link
+  Bar :=< string` link
   <*Foo setter> (
     <[] | bar setter> *Foo
   )

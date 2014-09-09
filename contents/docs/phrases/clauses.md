@@ -162,7 +162,7 @@ Phrase _clause (= 2)
 
 ~~ A canonical form of the above phrase:
 Phrase (
-  Foo = 2
+  Foo = * (= 2)
 )
 ```
 
@@ -180,7 +180,7 @@ Phrase "value" clause (= 2)
 ~~ Canonical form:
 Phrase (
   = "value"
-  Foo = 2
+  Foo = * (= 2)
 )
 ```
 

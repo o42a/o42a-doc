@@ -64,10 +64,9 @@ Example:
 ```o42a
 Foo := //~~Root~~ void ~~This can be written without `//` prefix.~~ (
   Value :=< //~~Root~~ integer ~~This can be written without `//` prefix~~
-  Sum :=> :: ~~Parent field, i.e. `foo`~~ (
-    Arg :=< / ~~Refers the module object~~ foo ~~Refers module field `foo`~~
-    Value = foo: value + :~~Parent object, i.e. `sum`~~ arg: value
-  )
+  :: ~~Parent field, i.e. `foo`~~
+  Arg := / ~~Refers the module object~~ foo ~~Refers module field `foo`~~
+  Double value := foo: value + :~~Parent object, i.e. `foo`~~ arg: value
 )
 ```
 
@@ -75,8 +74,8 @@ Foo := //~~Root~~ void ~~This can be written without `//` prefix.~~ (
 > references. They mean the same in the following piece of code:
 > ```o42a
 > Foo := void (
->   Bar :=> :  ~~ Refers the `foo` field.
->   Baz :=> :: ~~ Also refers the `foo` field.
+>   :  ~~ Refers the enclosing object `foo`.
+>   :: ~~ Also refers the enclosing object `foo`.
 > )
 > ```
 >
@@ -84,8 +83,8 @@ Foo := //~~Root~~ void ~~This can be written without `//` prefix.~~ (
 > ```o42a
 > Foo := void (
 >   Bar (
->     F :=> :  ~~ Refers the enclosing object inherited from `bar`.
->     G :=> :: ~~ Refers the `foo` field.
+>     :  ~~ Refers the enclosing object inherited from `bar`.
+>     :: ~~ Refers the enclosing object `foo`.
 >   )
 > )
 > ```

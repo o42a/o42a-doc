@@ -53,7 +53,7 @@ Phrase :=> void (
 Phrase () [2] ~~ Constructs an object inherited from `phrase`.
 ~~ Canonical form:
 Phrase (
-  Foo = 2
+  Foo = * (= 2)
 )
 
 Phrase () 'value' ~~ Constructs an object inherited from `phrase`.
@@ -69,7 +69,7 @@ String (= "value")
 Phrase [2] ~~ Constructs an object inherited from `phrase`.
 ~~ Canonical form:
 Phrase (
-  Foo = 2
+  Foo = * (= 2)
 )
 ```
 

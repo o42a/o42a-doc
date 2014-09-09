@@ -111,7 +111,7 @@ Adapter := void (
 )
 Object := void (
   @Adapter := * (
-    Foo = 2
+    Foo = * (= 2)
   )
 )
 
@@ -176,7 +176,7 @@ Type := void (
   Foo := 2
 )
 @Type := * (
-  Foo = 4
+  Foo = * (= 4)
 )
 ```
 

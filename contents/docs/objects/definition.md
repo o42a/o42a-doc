@@ -36,7 +36,7 @@ A := integer (
   = Value + 1
 )
 B := a (
-  Value = 41
+  *Value (= 41)
 )
 ```
 

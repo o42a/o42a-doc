@@ -54,8 +54,8 @@ Every array is an object and can be constructed by the
 object [constructor expression][]. The type of array
 elements can be specified as a type parameters:
 ```o42a
-Foo :=> void (Int :=< integer)
-Bar :=> foo (Str :=< string)
+Foo :=> void (Int :=< integer `link)
+Bar :=> foo (Str :=< string `link)
 
 Foo row := [foo (Int = 1), foo (Int = 2)] ~~ Elements type is `foo`.
 
