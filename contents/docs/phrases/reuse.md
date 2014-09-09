@@ -7,7 +7,7 @@ order: 4
 Reusing Clauses
 ===============
 <!--
-Copyright (C) 2010-2013 Ruslan Lopatin.
+Copyright (C) 2010-2014 Ruslan Lopatin.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -31,10 +31,10 @@ Phrase :=> void (
   Foo :=< `integer
   Bar :=< `string
   <*Foo setter> (
-    <[] | bar setter> Foo = ()
+    <[] | bar setter> *Foo
   )
   <*Bar setter> (
-    <'' | foo setter> Bar = ()
+    <'' | foo setter> *Bar
   )
 )
 
@@ -61,17 +61,17 @@ Phrase :=> void (
   B :=< `integer
   C :=< `integer
 
-  <[] | set b*> A = () ~~ Value of `b` can be placed right after this.
+  <[] | set b*> *A ~~ Value of `b` can be placed right after this.
   <Set a> (
     <[]
       | set b  ~~ `Set b` can be placed after value. ~~
-      | set b* ~~ Or `b` value can be placed right after this one. ~~/> A = ()
+      | set b* ~~ Or `b` value can be placed right after this one. ~~/> *A
   )
   <Set b> (
-    <[] | set c | set c*> B = ()
+    <[] | set c | set c*> *B
   )
   <Set c> (
-    <[]> C = ()
+    <[]> *C
   )
 )
 
@@ -91,8 +91,8 @@ Enclosing object can be reused too. The `$object` reference can be used for that
 Phrase :=> void (
   Foo :=< `integer
   Bar :=< `string
-  <[] | $object> Foo = ()
-  <'' | $object> Bar = ()
+  <[] | $object> *Foo
+  <'' | $object> *Bar
 )
 
 Phrase 'value' [42] ~~ The same as:
@@ -115,8 +115,8 @@ can be rewritten as following:
 Phrase :=> void (
   Foo :=< `integer
   Bar :=< `string
-  <[] | *> Foo = ()
-  <'' | *> Bar = ()
+  <[] | *> *Foo
+  <'' | *> *Bar
 )
 ```
 
@@ -134,8 +134,8 @@ Print :=> void (
 
   <*Printer> Void (
     <*Content> Print (
-      <[] | *> Text = ()
-      <'' | *> Text = ()
+      <[] | *> *Text
+      <'' | *> *Text
       <NL | *> Text = "\n"
     )
   )

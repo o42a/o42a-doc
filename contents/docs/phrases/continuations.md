@@ -7,7 +7,7 @@ order: 5
 Phrase Completeness
 ===================
 <!--
-Copyright (C) 2010-2013 Ruslan Lopatin.
+Copyright (C) 2010-2014 Ruslan Lopatin.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -27,13 +27,14 @@ before closing brace (`>`) of clause declaration. An example of sub-string,
 taking the length as a second parameter instead of the ending index:
 ```o42a
 Substr :=> string (
-  <[] | from | length ...> Input = () ~~ Either `from` or `length` required.
+  <[] | from | length ...> *Input
+                            ~~ Either `from` or `length` required.
   <From...> (               ~~ Argument required after the `from` word.
-    <[] | length> From = () ~~ `Length` can be provided after `from`,
+    <[] | length> *From     ~~ `Length` can be provided after `from`,
                             ~~ but is optional.
   )
-  <Length...> (          ~~ Argument required after the `length` word.
-    <[]> Length = ()     ~~ Length has no continuation and can only be the last.
+  <Length...> (             ~~ Argument required after the `length` word.
+    <[]> *Length            ~~ Length has no continuation and can only be the last.
   )
 
   Input :=< `string
@@ -56,7 +57,7 @@ Terminator
 Look at the following code:
 ```o42a
 Str :=> string (
-  <''> = ()
+  <''> ()
 )
 
 Str 'abc' [1]
@@ -79,7 +80,7 @@ be declared as _terminator_. The clause becomes a terminator when an exclamation
 mark (`!`) precedes the closing bracket. So, the following code is valid:
 ```o42a
 Str :=> string (
-  <''!> = ()
+  <''!> ()
 )
 
 Str 'abc' [1]   ~~ This is valid and is the same as:
