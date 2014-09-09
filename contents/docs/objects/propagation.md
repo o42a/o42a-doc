@@ -49,7 +49,7 @@ Ancestor := void (
 )
 
 Object := ancestor (
-  Foo = 3
+  Foo = * (= 3)
 )
 ```
 
@@ -59,8 +59,25 @@ In this case the `object: foo` value is `3`.
 Implied Scope Usage
 -------------------
 
-When overriding a field it is possible to use an _implied scope reference_ (`*`)
-to indicate that the field definition didn't change:
+When overriding a field it is not possible to change the field's ancestor.
+Instead, an _implied scope reference_ (`*`) can be used as an ancestor
+placeholder in [constructor expression](creation.html#constructor expression): 
+```o42a
+Ancestor := void (
+  Foo := void (
+    Bar := 2
+  )
+)
+
+Object := ancestor (
+  Foo = * (
+    Bar = * (= 4)
+  )
+)
+```
+
+It is also possible to use an implied scope reference alone to indicate that
+the field definition didn't change:
 ```o42a
 Ancestor := void (
   Foo := 2
@@ -71,21 +88,6 @@ Object := ancestor (
 )
 ```
 
-Implied scope reference can also be used as an ancestor placeholder in
-[constructor expression](creation.html#constructor expression):
-```o42a
-Ancestor := void (
-  Foo := void (
-    Bar := 2
-  )
-)
-
-Object := ancestor (
-  Foo = * (
-    Bar = 4
-  )
-)
-```
 
 Short Syntax
 ------------
@@ -109,38 +111,10 @@ A := void (
 )
 
 B := a (
-  *Field (= 2) ~~ Short override syntax.
+  *Field (= 2)     ~~ Short override syntax.
 )
 
 C := a (
-  Field := * (
-    = 2        ~~ Full override syntax equal to the short one.
-  )
+  Field := * (= 2) ~~ Full override syntax equal to the short one above.
 )
 ```
-
-Ancestor Upgrade
-----------------
-
-When overriding a field, it is possible to upgrade its ancestor.
-
-Propagated field's ancestor should be derived from overridden field's one.
-
-Here is an example:
-```o42a
-Ancestor := void (
-  Foo := void (
-    Bar := 2
-  )
-)
-
-Object := ancestor (
-  Foo = string (~~ `object: foo` is `string`, despite it's propagated from `ancestor: foo`, which is `void`.
-    Bar = 4
-    = "four"
-  )
-)
-```
-
-Note that in the above example the `object: foo` upgraded its type to _string_
-from _void_ in addition to ancestor upgrade.

@@ -23,7 +23,7 @@ unless overridden.
 Ancestor Object Evaluation
 --------------------------
 
-An object inherits not than just an ancestor object. In fact, it inherits an
+An object inherits not just an ancestor object. In fact, it inherits an
 ancestor expression. An ancestor expression is evaluated once per object,
 in the scope of the enclosing object. When executed in different scopes,
 an ancestor expression can resolve to different objects.
@@ -46,9 +46,37 @@ An ancestor of `b: bar`, executed in the scope of enclosing object `b` will
 result to `b: foo` object, which contains a new field `g`. So an expression
 `b: bar: g` is valid and returns `2`.
 
-> Note that when object inherits object from another module, or inherits a
-> [static field][] the ancestor expression always resolves to the same ancestor
-> object.
+> Note that when an object inherits an object from another module or inherits a
+> [static field][], the ancestor expression is static and always resolves to
+> the same ancestor object.
+
+
+Limitations
+-----------
+
+There are limitations of what could be inherited.
+
+It is not possible to inherit an object, which structure is only known at run
+time. For example, it is not possible to inherit a [link](../core/links.html)
+target, or [variable](../core/variables.html) value:
+```o42a
+A := `1       ~~ A link.
+B := a->(= 2) ~~ Link target can not be inherited.
+```
+
+An object can not inherit enclosing objects:
+```o42a
+A ::= void (
+  B := void (
+    B ()     ~~ This is not possible, as `b` is enclosing object.
+    A ()     ~~ This is also not possible.
+    /A ()    ~~ This is possible, because it is an inheritance of
+             ~~ static object `a`, not an enclosing object `a`.
+    A: b ()  ~~ This is also possible, as this is an inheritance of
+             ~~ field `b` of enclosing object `a`, not an enclosing object `b`.
+  )
+)
+```
 
 [static field]: fields.html#static-fields
 
@@ -79,8 +107,8 @@ Ancestor := Integer (
 )
 
 Object := Ancestor (
-  Arg 1 = 2
-  Arg 2 = 4
+  Arg 1 = * (= 2)
+  Arg 2 = * (= 4)
 )
 ```
 
@@ -115,7 +143,7 @@ Every field present in ancestor is [propagated](propagation.html) to inherited
 object and can be overridden.
 
 Note that despite _private_ fields are propagated to inherited object, they are
-not accessible (and thus can not be overridden).
+not accessible and thus can not be overridden.
 
 Also, an inherited object may declare new fields.
 
@@ -125,7 +153,7 @@ Ancestor := void (
   Foo := 2
 )
 Object := ancestor (
-  Foo = 3            ~~ Override field "foo" declared in "ancestor".
+  Foo = * (= 3)      ~~ Override field "foo" declared in "ancestor".
   Bar := "new field" ~~ Declare new field "bar".
 )
 ```

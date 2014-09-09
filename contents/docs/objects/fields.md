@@ -78,8 +78,8 @@ Addition :=> binary operation ( ~~ Public prototype.
   = operand 1 + operand 2
 )
 :Sum := addition ( ~~ Ordinary private object.
-  Operand 1 = 11 ~~ Override `operand 1`.
-  Operand 2 = 31 ~~ Override `operand 2`.
+  *Operand 1 (= 11) ~~ Override `operand 1`.
+  *Operand 2 (= 31) ~~ Override `operand 2`.
 )
 ```
 
@@ -187,15 +187,15 @@ becomes just another name for aliased field. So, overriding such alias becomes
 equal to overriding the aliased field:
 ```o42a
 A := void (
-  Field := 1     ~~ Declare a field.
-  Alias :- field ~~ Create an alias for `field`.
+  Field := 1      ~~ Declare a field.
+  Alias :- field  ~~ Create an alias for `field`.
 )
-A: field ~~ 1
-A: alias ~~ 1, the same as `a: field`.
+A: field          ~~ 1
+A: alias          ~~ 1, the same as `a: field`.
 
 B := a (
-  Alias = 2      ~~ This is valid.
+  Alias = * (= 2) ~~ This is valid.
 )
-B: field ~~ 2, overridden with alias.
-B: alias ~~ 2, the same as `b: field`.
+B: field          ~~ 2, overridden with alias.
+B: alias          ~~ 2, the same as `b: field`.
 ```

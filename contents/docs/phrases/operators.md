@@ -39,8 +39,8 @@ Here is a definition of unary operators for complex numbers:
 Complex numbers := void (
   Minus :=> complex (
     Operand :=< `complex
-    Real = -operand: real
-    Img = -operand: img
+    *Real (= -operand: real)
+    *Img (= -operand: img)
   )
 )
 Complex :=> void (
@@ -69,8 +69,8 @@ Complex numbers := void (
   Add :=> complex (
     Left operand :=< `complex
     Right operand :=< `complex
-    Real = left operand: real + right operand: real
-    Img = left operand: img + right operand: img
+    *Real (= left operand: real + right operand: real)
+    *Img (= left operand: img + right operand: img)
   )
 )
 Complex :=> void (
