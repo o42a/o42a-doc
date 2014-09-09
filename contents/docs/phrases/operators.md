@@ -7,7 +7,7 @@ order: 6
 Operators Override
 ==================
 <!--
-Copyright (C) 2010-2013 Ruslan Lopatin.
+Copyright (C) 2010-2014 Ruslan Lopatin.
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
 or any later version published by the Free Software Foundation;
@@ -48,7 +48,7 @@ Complex :=> void (
   Img :=< float
   <+*> ~~ No content. Just return an operand.
   <*> Complex numbers: minus (
-    <-*> Operand = () ~~ Substitute the operand as `operand` field.
+    <-*> *Operand ~~ Substitute the operand as `operand` field.
   )
 )
 ```
@@ -82,7 +82,7 @@ Complex :=> void (
                                                            ~~ left operand
 
     <:Right summand> (
-      <* + *> Right operand = () ~~ Substitute the right operand
+      <* + *> *Right operand ~~ Substitute the right operand
     )
   )
 )
@@ -118,7 +118,7 @@ Complex :=> void (
   <*Equality> Complex numbers: equals (
      <*What equals | equals to> What = $prefix
      <:Equals to> (
-       <* == *> To = ()
+       <* == *> *To
      )
   )
 )

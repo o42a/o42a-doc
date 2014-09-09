@@ -124,22 +124,20 @@ Phrase :=> void (
 
 Phrase [42] ~~ The same as:
 Phrase (
-  Foo = 42
+  Foo = * (= 42)
 )
 ```
 
-A special syntax can be used to substitute the value as a field definition. For
-that, use an empty parentheses as field definition:
+A short syntax can also be used:
 ```o42a
 Phrase :=> void (
-  Value :=< `string      ~~ Link to a `string` object.
-  <[]> Value = ()        ~~ Substitution.
+  <[]> *Value ~~ A short form of the above.
 )
 
-Str := "Some string"
-
-Phrase [str]             ~~ Link to existing `str` object.
-Phrase (Value = str)     ~~ Canonical form of the above.
+Phrase [42]    ~~ The same as:
+Phrase (
+  *Foo (= 42)  ~~ Note that this is just a short form of field override syntax.
+)
 ```
 
 

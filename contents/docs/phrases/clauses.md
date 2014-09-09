@@ -237,8 +237,8 @@ placed to corresponding bound. The other bound should be omitted.
 Here is an example of a fully-bounded right-open substring clause declaration:
 ```o42a
 <*Substring> Substring (
-  <[From...) | to> From = ()
-  <[...To)!> To = ()
+  <[From...) | to> *From
+  <[...To)!> *To
 )
 ``` 
 
@@ -253,11 +253,11 @@ Here are examples of half-bounded (leading and trailing) substring clause
 declarations:
 ```o42a
 <*Leading substring> Substring (
-  <(-...To)!> To = ()
+  <(-...To)!> *To
 )
 
 <*Trailing substring> Substring (
-  <[From...-)!> From = ()
+  <[From...-)!> *From
 )
 ```
 
