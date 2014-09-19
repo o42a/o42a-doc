@@ -192,7 +192,7 @@ The syntax is:
 > `<expression> '>>'`
 
 Normally, an object value is (re-)evaluated on each request. This not always a
-required behaviour, as the result of evaluations may differ, or could be very
+required behaviour, as the results of evaluations may differ, or could be very
 excessive in terms of performance and resources usage.
 
 Also, an object value is evaluated when requested. I.e. it won't be evaluated
@@ -202,10 +202,12 @@ To evaluate the object value immediately and to preserve it for later use, an
 eager reference could be used. Eager reference evaluates the value of
 `<expression>`, constructs a new object inherited from `<expression>` and
 returns it. The value of the resulting object is constant, and equal to
-previously evaluated value of `<expression>`.
+previously evaluated value of `<expression>`. Such object is called
+_eager object_.
 
-Note, that any object inherited from eager reference inherits its value too,
-unless the value definition is overridden in inherited object.
+Any object inherited from eager object also inherits its value.
+Thus, the inherited object is eager too.
+**It is not possible to redefine the values of inherited eager objects.**
 
 
 Other
