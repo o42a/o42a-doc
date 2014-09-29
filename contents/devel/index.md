@@ -20,12 +20,12 @@ of additional language features necessary to make libraries handy and efficient.
 The next major step is a 0.3.0 release, which should contain the core libraries
 and should be stable and practically usable.
 
-> You may track the development activity [here](http://bitbucket.org/o42a/o42a/changesets).
+> You may track the development activity [here](https://bitbucket.org/o42a/o42a/commits/all).
 
 Development Plan
 ----------------
 
-The development planned to consist of the two main phases:
+The development is planned to consist of two main phases:
 
 * a prototype development, and
 * a production compiler development (since release 0.5.0).
@@ -35,8 +35,8 @@ for the upcoming production compiler, which will be written in o42a.
 
 A production compiler written in o42a is not just a get-rid-of-Java task.
 The more important objective is to proof the language maturity and
-it's usefulness in a serious development. Well, the compiler is really a serious
-project and it's development will be an excellent practice of the
+its usefulness in a serious development. Well, the compiler is really is
+a serious project and its development will be an excellent practice of the
 language usage.
 
 Because Java has a rich set of development tools it better suits for the
@@ -50,7 +50,7 @@ set, stability and performance.
 | 0.1.0    | Draft     | The initial release with some basic features missing
 | 0.1.x    | Draft     | Implement the missing language features. Improve stability.
 | 0.2.0    | Prototype | First feature-complete release.
-| 0.2.x    | Prototype | Implement an additional features. Write the base library.
+| 0.2.x    | Prototype | Implement additional language features. Write a base library.
 |          |           | The main room for experimenting.
 | 0.3.0    | Bootstrap | A base of bootstrap compiler implementation.
 |          |           | This is a start of the work on production compiler.
