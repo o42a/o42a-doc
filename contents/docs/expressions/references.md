@@ -205,9 +205,7 @@ returns it. The value of the resulting object is constant, and equal to
 previously evaluated value of `<expression>`. Such object is called
 _eager object_.
 
-Any object inherited from eager object also inherits its value.
-Thus, the inherited object is eager too.
-**It is not possible to redefine the values of inherited eager objects.**
+**It is not possible to inherit eager objects or override eager fields.**
 
 
 Other
