@@ -80,7 +80,7 @@ $Local + 1 ~~ Error. The local is not visible in another alternative.
 $Local = 1, $local > 0.
 = $Local - 1 ~~ Correct.
 ```
-* A local declared in an [interrogative](intex.html#interrogative-sentence)
+* A local declared in an [interrogative](index.html#interrogative-sentence)
   sentence with only one [alternative][] is visible in the next
   non-interrogative sentence, but not in the one next to it:
 ```o42a
